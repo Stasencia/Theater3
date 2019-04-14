@@ -1,7 +1,4 @@
-﻿using MahApps.Metro;
-using MahApps.Metro.Controls;
-using MahApps.Metro.Controls.Dialogs;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,7 +17,7 @@ namespace WpfApp1
     /// <summary>
     /// Логика взаимодействия для Authorization.xaml
     /// </summary>
-    public partial class Authorization : MetroWindow
+    public partial class Authorization
     {
         private static Authorization instance;
         public static Authorization GetInstance()
@@ -32,9 +29,6 @@ namespace WpfApp1
         protected Authorization()
         {
             InitializeComponent();
-            ThemeManager.ChangeAppStyle(this,
-                                    ThemeManager.GetAccent("Teal"),
-                                    ThemeManager.GetAppTheme("BaseLight"));
         }
 
         private void Button_ClickAsync(object sender, RoutedEventArgs e)
@@ -47,6 +41,10 @@ namespace WpfApp1
         private void MetroWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             instance = null;
+        }
+        private void DialogClose(object sender, RoutedEventArgs e)
+        {
+            MaterialDesignThemes.Wpf.DialogHost.CloseDialogCommand.Execute(null, null);
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿using MahApps.Metro.Controls;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,7 +17,7 @@ namespace WpfApp1
     /// <summary>
     /// Логика взаимодействия для Afisha.xaml
     /// </summary>
-    public partial class Afisha : MetroWindow
+    public partial class Afisha
     {
         public Afisha()
         {

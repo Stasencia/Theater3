@@ -1,6 +1,4 @@
-﻿using MahApps.Metro;
-using MahApps.Metro.Controls;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,7 +17,7 @@ namespace WpfApp1
     /// <summary>
     /// Логика взаимодействия для Registration.xaml
     /// </summary>
-    public partial class Registration : MetroWindow
+    public partial class Registration
     {
         private static Registration instance;
         public static Registration GetInstance()
@@ -31,9 +29,6 @@ namespace WpfApp1
         protected Registration()
         {
             InitializeComponent();
-            ThemeManager.ChangeAppStyle(this,
-                                    ThemeManager.GetAccent("Teal"),
-                                    ThemeManager.GetAppTheme("BaseLight"));
         }
 
         private void RegistrateBtn_Click(object sender, RoutedEventArgs e)
@@ -46,6 +41,10 @@ namespace WpfApp1
         private void MetroWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             instance = null;
+        }
+        private void DialogClose(object sender, RoutedEventArgs e)
+        {
+            MaterialDesignThemes.Wpf.DialogHost.CloseDialogCommand.Execute(null, null);
         }
     }
 }

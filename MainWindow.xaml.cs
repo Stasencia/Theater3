@@ -1,6 +1,4 @@
-﻿using MahApps.Metro;
-using MahApps.Metro.Controls;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,14 +18,11 @@ namespace WpfApp1
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : MetroWindow
+    public partial class MainWindow
     {
         public MainWindow()
         {
             InitializeComponent();
-            ThemeManager.ChangeAppStyle(this,
-                                   ThemeManager.GetAccent("Teal"),
-                                   ThemeManager.GetAppTheme("BaseLight"));
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
