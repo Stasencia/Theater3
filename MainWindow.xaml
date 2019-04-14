@@ -1,0 +1,64 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="481" Width="800" MinWidth="800" MinHeight="481" Loaded="Window_Loaded" FontFamily="Century Gothic">
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}" x:Key="ImageButtonStyle">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <ContentPresenter/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid Margin="0,15,0,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="61*"/>
+            <ColumnDefinition Width="199*"/>
+            <ColumnDefinition Width="38*"/>
+            <ColumnDefinition Width="196*"/>
+            <ColumnDefinition Width="99*"/>
+            <ColumnDefinition Width="199*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="17*"/>
+            <RowDefinition Height="29*"/>
+            <RowDefinition Height="17*"/>
+            <RowDefinition Height="388*"/>
+        </Grid.RowDefinitions>
+        <Image HorizontalAlignment="Center" VerticalAlignment="Center" Source="Resources\opera02.jpg" Stretch="UniformToFill" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="6" />
+        <Viewbox Grid.Column="3" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Style="{StaticResource ImageButtonStyle}" Content="Афиша" FontFamily="Verdana" FontSize="24" FontWeight="Bold" Click="AfishaButton_Click"/>
+        </Viewbox>
+        <StackPanel Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" Grid.ColumnSpan="2" Orientation="Horizontal">
+            <Image x:Name="Curtainimg" UseLayoutRounding="True" SnapsToDevicePixels="True" 
+       RenderOptions.EdgeMode="Aliased" Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" HorizontalAlignment="Left" VerticalAlignment="Center" Source="Resources\theatreicon.png" Stretch="Uniform" Margin="5"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="15*"/>
+                    <RowDefinition Height="31*"/>
+                    <RowDefinition Height="15*"/>
+                </Grid.RowDefinitions>
+                <Viewbox Grid.Column="1" Grid.Row="1" VerticalAlignment="Center">
+                    <TextBlock FontSize="14" ><Run Text="Театр имени "/><LineBreak/><Run Text="Ольги Кобылянской"/></TextBlock>
+                </Viewbox>
+            </Grid>
+        </StackPanel>
+        <!--Image Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" HorizontalAlignment="Left" VerticalAlignment="Center" Source="Resources\theatreicon.png" Stretch="Uniform" Margin="5"/>
+        <Viewbox Grid.Column="1" Grid.Row="1" HorizontalAlignment ="Left" VerticalAlignment="Center">
+            <TextBlock VerticalAlignment="Center" FontFamily="Verdana" FontSize="14" ><Run Text="Театр имени "/><LineBreak/><Run Text="Ольги Кобылянской"/></TextBlock>
+        </Viewbox-->
+        <Viewbox Grid.Column="5" Grid.Row="1" HorizontalAlignment="Right">
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <Button Style="{StaticResource ImageButtonStyle}"  Click="Button_Click" Content="Авторизация / " VerticalAlignment="Center"/>
+                <Button Style="{StaticResource ImageButtonStyle}" Content="Регистрация" VerticalAlignment="Center" Click="Button_Click_1"/>
+            </StackPanel>
+        </Viewbox>
+    </Grid>
+</Window>
