@@ -1,11 +1,18 @@
-﻿<UserControl x:Class="WpfApp1.Performance_list"
+﻿<UserControl x:Class="Theater.Performance_list"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:WpfApp1"
+             xmlns:local="clr-namespace:Theater"
              mc:Ignorable="d" 
              d:DesignHeight="400" d:DesignWidth="800" FontFamily="Century Gothic" MaxHeight="400">
+    <UserControl.Resources>
+        <Style TargetType="Button" BasedOn="{StaticResource MaterialDesignRaisedLightButton}">
+            <Setter Property="Background" Value="Tomato"></Setter>
+            <Setter Property="Foreground" Value="White"></Setter>
+            <Setter Property="BorderBrush" Value="Tomato"></Setter>
+        </Style>
+    </UserControl.Resources>
     <Grid Margin="20">
         <Grid.RowDefinitions>
             <RowDefinition Height="73*"/>
@@ -25,6 +32,6 @@
         <Label Grid.Column="1" Grid.Row="3">
             <TextBlock TextWrapping="Wrap"  FontSize="14">Отправление — пересадка — прибытие. Случай — выбор — судьба. Неподвижность — ускорение. Отражение — прозрачность. Знакомое — неизвестное. Частное — публичное. Изоляция — пересечение границ. Яркие огни прожектора — темнота туннеля. Прошлое — будущее. Спектакль «Пассажиры» — это размышление о человеке и важности и красоте отношений между людьми. Посредством языка тела — танца и акробатики...</TextBlock>
         </Label>
-        <Button Margin="5,0,0,0" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Center">Узнать больше</Button>
+        <Button Margin="5,0,0,0" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Center" VerticalContentAlignment="Center">Узнать больше</Button>
     </Grid>
 </UserControl>

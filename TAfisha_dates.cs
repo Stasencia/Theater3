@@ -1,22 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Linq.Mapping;
 using System.Linq;
+using System.Data.Linq.Mapping;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Theater
 {
-    [Table(Name = "Users")]
-    class TUsers
+    [Table(Name = "Afisha_dates")]
+    class TAfisha_dates
     {
         [Column(IsPrimaryKey = true, IsDbGenerated = true)]
         public int Id { get; set; }
         [Column]
-        public string Login { get; set; }
+        public int Id_performance { get; set; }
         [Column]
-        public string Password { get; set; }
-        [Column(IsDbGenerated = true)]
-        public int Rights { get; set; }
+        public DateTime Date { get; set; }
+        [Column]
+        public bool Cancelled { get; set; }
     }
 }
