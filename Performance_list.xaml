@@ -13,25 +13,23 @@
             <Setter Property="BorderBrush" Value="Tomato"></Setter>
         </Style>
     </UserControl.Resources>
-    <Grid Margin="20">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="73*"/>
-            <RowDefinition Height="32*"/>
-            <RowDefinition Height="75*"/>
-            <RowDefinition Height="145*"/>
-            <RowDefinition Height="35*"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="259*"/>
-            <ColumnDefinition Width="501*"/>
-        </Grid.ColumnDefinitions>
-        <Image Source="Resources/pass-afisha.jpg" Grid.RowSpan="5" HorizontalAlignment="Left"></Image>
-        <Label Grid.Column="1" FontWeight="Bold" FontSize="18">Пассажири</Label>
-        <Label Grid.Column="1" Grid.Row="1" FontSize="14">Продолжительность: 1 час 30 минут</Label>
-        <Label Grid.Column="1" Grid.Row="2" FontSize="14">Возрастное ограничение: 12+</Label>
-        <Label Grid.Column="1" Grid.Row="3">
-            <TextBlock TextWrapping="Wrap"  FontSize="14">Отправление — пересадка — прибытие. Случай — выбор — судьба. Неподвижность — ускорение. Отражение — прозрачность. Знакомое — неизвестное. Частное — публичное. Изоляция — пересечение границ. Яркие огни прожектора — темнота туннеля. Прошлое — будущее. Спектакль «Пассажиры» — это размышление о человеке и важности и красоте отношений между людьми. Посредством языка тела — танца и акробатики...</TextBlock>
-        </Label>
-        <Button Margin="5,0,0,0" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Center" VerticalContentAlignment="Center">Узнать больше</Button>
-    </Grid>
+    <DockPanel Margin="20">
+        <Image x:Name="PerfImage" DockPanel.Dock="Left" Source="Resources/pass-afisha.jpg"></Image>
+        <Grid DockPanel.Dock="Left">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="73*"/>
+                <RowDefinition Height="32*"/>
+                <RowDefinition Height="73*"/>
+                <RowDefinition Height="145*"/>
+                <RowDefinition Height="35*"/>
+            </Grid.RowDefinitions>
+            <Label x:Name="PerfName" FontWeight="Bold" FontSize="18">Пассажири</Label>
+            <Label x:Name="Duration" Grid.Row="1" FontSize="14">Продолжительность: 1 час 30 минут</Label>
+            <Label x:Name="AgeRestriction" Grid.Row="2" FontSize="14">Возрастное ограничение: 12+</Label>
+            <Label Grid.Row="3">
+                <TextBlock TextTrimming="WordEllipsis" x:Name="Description" TextWrapping="Wrap"  FontSize="14">Отправление — пересадка — прибытие. Случай — выбор — судьба. Неподвижность — ускорение. Отражение — прозрачность. Знакомое — неизвестное. Частное — публичное. Изоляция — пересечение границ. Яркие огни прожектора — темнота туннеля. Прошлое — будущее. Спектакль «Пассажиры» — это размышление о человеке и важности и красоте отношений между людьми. Посредством языка тела — танца и акробатики fjgkfmg fkgjldfg dgldgjdfs lfjs</TextBlock>
+            </Label>
+            <Button x:Name="LearnMoreBtn" Margin="5,0,0,0" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Center" VerticalContentAlignment="Center">Узнать больше</Button>
+        </Grid>
+    </DockPanel>
 </UserControl>
