@@ -53,8 +53,9 @@
                         <Border BorderBrush="Gray" BorderThickness="1">
                             <Grid>
                                 <Image Source="{Binding Path=(local:DayButtonProperties.Image), RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}"></Image>
+                                <Rectangle Fill="Gray" Opacity="{Binding Path=(local:DayButtonProperties.ImageOpacity), RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}"></Rectangle>
                                 <Label Content="{Binding Path=(local:DayButtonProperties.Day), RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}"></Label>
-                                <Label  Content="{Binding Path=(local:DayButtonProperties.Time), RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}" VerticalAlignment="Bottom"></Label>
+                                <Label Content="{Binding Path=(local:DayButtonProperties.Time), RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}" VerticalAlignment="Bottom" Opacity="{Binding Path=(local:DayButtonProperties.TextOpacity), RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}"  Foreground="White"></Label>
                             </Grid>
                         </Border>
                     </ControlTemplate>

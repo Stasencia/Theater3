@@ -11,6 +11,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
@@ -32,7 +33,6 @@ namespace Theater
             this.Month_id = Month_id;
             Height = 450;
             Performance_Load();
-            //Dates_panel.Height = Dates_panel.ActualWidth - Dates_panel.ActualWidth / 7;
         }
 
         private void Performance_Load()
@@ -80,19 +80,14 @@ namespace Theater
                 {
                     Button b = new Button();
                     b.Style = this.FindResource("DateStyle") as Style;
-                    //b.MouseEnter += new EventHandler(button_MouseEnter);
-                    //b.MouseLeave += new EventHandler(button_MouseLeave);
+                    b.MouseEnter += new MouseEventHandler(DayBtn_MouseEnter);
+                    b.MouseLeave += new MouseEventHandler(DayBtn_MouseLeave);
                     b.Name = "b" + (j * 7 + k);
-                    //ImageSource im = new BitmapImage(new Uri("C:/Users/Stasia/Desktop/Theater/Theater/bin/Debug/images_afisha/jp_small.jpg", UriKind.RelativeOrAbsolute));
-                    //b.SetValue(DayButtonProperties.ImageProperty, im);
                     // b.Click += new System.EventHandler(this.Day_pushed);
                     Dates_panel1.Children.Add(b);
-                    //Grid.SetColumn(b, k);
-                    //Grid.SetRow(b, j);
                 }
             }
-            Button_customization(push, null);
-            //push.RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));
+            push.RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));
         }
 
         private void Button_customization(object sender, EventArgs args)
@@ -112,37 +107,73 @@ namespace Theater
                               ap => ap.Id_performance,
                               (tp, ap) => new { tp.Small_image, ap.Date, ap.Cancelled })
                               .Where(k => k.Date >= d1 && k.Date >= DateTime.Now && !k.Cancelled);
-            //string s = DB_connection.current_directory + "images_afisha\\" + query.First().Small_image;
-            //var im = new BitmapImage(new Uri(s, UriKind.RelativeOrAbsolute));
+            
             //var im1 = new TransformedBitmap(im, new ScaleTransform(month_panel.ActualWidth / 7 / im.PixelWidth, month_panel.ActualWidth / 7 / im.PixelHeight));
             for (int i = 0; i < 42; i++)
             {
                 b = Dates_panel1.Children.OfType<Button>().Where(x => x.Name == ("b" + i)).First();
                 b.SetValue(DayButtonProperties.DayProperty, d.Day.ToString());
-                //b.SetValue(DayButtonProperties.ImageProperty, im);
                 b.IsEnabled = false;
-                //b.SetValue(DayButtonProperties.ImageProperty, null);
                 b.Tag = d.Year + "-" + d.Month + "-" + d.Day;
                 d = d.AddDays(1);
             }
-
             
             var buttons = Dates_panel1.Children.OfType<Button>().Where(k => k.Name.StartsWith("b"))
                             .Join(query,
                                 button => Convert.ToDateTime(button.Tag).ToShortDateString(),
                                 afisha_info => afisha_info.Date.ToShortDateString(),
                                 (button, afisha_info) => new { button, afisha_info });
+            string s = DB_connection.current_directory + "images_afisha\\" + query.First().Small_image;
+            BitmapImage im = new BitmapImage(new Uri(s, UriKind.RelativeOrAbsolute));
             foreach (var b1 in buttons)
             {
-                string s = DB_connection.current_directory + "images_afisha\\" + query.First().Small_image;
-                var im = new BitmapImage(new Uri(s, UriKind.RelativeOrAbsolute));
-                //var im1 = new TransformedBitmap(im, new ScaleTransform(month_panel.ActualWidth / 7 / im.PixelWidth, month_panel.ActualWidth / 7 / im.PixelHeight));
                 b1.button.SetValue(DayButtonProperties.ImageProperty, im);
-               // for (int i = 0; i < 42; i++)
-                    // b1.button.SetValue(DayButtonProperties.OpacityProperty, 1);
-                    b1.button.IsEnabled = true;
+                b1.button.SetValue(DayButtonProperties.TimeProperty, b1.afisha_info.Date.ToShortTimeString());
+                b1.button.IsEnabled = true;
                 b1.button.Tag = b1.afisha_info.Date;
             }
+        }
+
+        private void DayBtn_MouseEnter(object sender, EventArgs e)
+        {
+            Button b = (Button)sender;
+            var animation1 = new DoubleAnimation
+            {
+                To = 0.25,
+                BeginTime = TimeSpan.FromSeconds(0),
+                Duration = TimeSpan.FromSeconds(0.5),
+                FillBehavior = FillBehavior.Stop
+            };
+
+            animation1.Completed += (s, a) => b.SetValue(DayButtonProperties.ImageOpacityProperty, 0.25);
+            var animation2 = new DoubleAnimation
+            {
+                To = 1.0,
+                BeginTime = TimeSpan.FromSeconds(0),
+                Duration = TimeSpan.FromSeconds(0.5),
+                FillBehavior = FillBehavior.Stop
+            };
+
+            animation2.Completed += (s, a) => b.SetValue(DayButtonProperties.TextOpacityProperty, 1.0);
+            b.BeginAnimation(DayButtonProperties.ImageOpacityProperty, animation1);
+            b.BeginAnimation(DayButtonProperties.TextOpacityProperty, animation2);
+        }
+
+        private void DayBtn_MouseLeave(object sender, EventArgs e)
+        {
+            Button b = (Button)sender;
+            var animation = new DoubleAnimation
+            {
+                To = 0,
+                BeginTime = TimeSpan.FromSeconds(0),
+                Duration = TimeSpan.FromSeconds(0.5),
+                FillBehavior = FillBehavior.Stop
+            };
+
+            animation.Completed += (s, a) => { b.SetValue(DayButtonProperties.ImageOpacityProperty, 0.0); b.SetValue(DayButtonProperties.TextOpacityProperty, 0.0); };
+
+            b.BeginAnimation(DayButtonProperties.ImageOpacityProperty, animation);
+            b.BeginAnimation(DayButtonProperties.TextOpacityProperty, animation);
         }
     }
 }

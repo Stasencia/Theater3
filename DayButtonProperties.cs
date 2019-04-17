@@ -23,18 +23,31 @@ namespace Theater
         public static readonly DependencyProperty ImageProperty =
             DependencyProperty.RegisterAttached("Image", typeof(ImageSource), typeof(DayButtonProperties), new UIPropertyMetadata((ImageSource)null));
 
-        public static int GetOpacity(DependencyObject obj)
+        public static double GetImageOpacity(DependencyObject obj)
         {
-            return (int)obj.GetValue(OpacityProperty);
+            return (double)obj.GetValue(ImageOpacityProperty);
         }
 
-        public static void SetOpacity(DependencyObject obj, int value)
+        public static void SetImageOpacity(DependencyObject obj, double value)
         {
-            obj.SetValue(ImageProperty, value);
+            obj.SetValue(ImageOpacityProperty, value);
         }
 
-        public static readonly DependencyProperty OpacityProperty =
-            DependencyProperty.RegisterAttached("Opacity", typeof(int), typeof(DayButtonProperties), new UIPropertyMetadata(0));
+        public static readonly DependencyProperty ImageOpacityProperty =
+            DependencyProperty.RegisterAttached("ImageOpacity", typeof(double), typeof(DayButtonProperties), new UIPropertyMetadata(default(double)));
+
+        public static double GetTextOpacity(DependencyObject obj)
+        {
+            return (double)obj.GetValue(TextOpacityProperty);
+        }
+
+        public static void SetTextOpacity(DependencyObject obj, double value)
+        {
+            obj.SetValue(TextOpacityProperty, value);
+        }
+
+        public static readonly DependencyProperty TextOpacityProperty =
+            DependencyProperty.RegisterAttached("TextOpacity", typeof(double), typeof(DayButtonProperties), new UIPropertyMetadata(default(double)));
 
 
         public static string GetDay(DependencyObject obj)

@@ -64,5 +64,3 @@ C:\Users\Stasia\Desktop\Theater\Theater\bin\Debug\MaterialDesignThemes.Wpf.pdb
 C:\Users\Stasia\Desktop\Theater\Theater\bin\Debug\MaterialDesignThemes.Wpf.xml
 C:\Users\Stasia\Desktop\Theater\Theater\obj\Debug\Performance.g.cs
 C:\Users\Stasia\Desktop\Theater\Theater\obj\Debug\Performance.baml
-C:\Users\Stasia\Desktop\Theater\Theater\obj\Debug\Theater.csprojAssemblyReference.cache
-C:\Users\Stasia\Desktop\Theater\Theater\obj\Debug\GeneratedInternalTypeHelper.g.cs
