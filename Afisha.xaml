@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Theater"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="Afisha" Height="530" Width="800" FontFamily="Century Gothic">
+        Title="Afisha" Height="550" Width="800" FontFamily="Century Gothic">
     <Window.Resources>
         <Style x:Key="MonthStyle" TargetType="Button" BasedOn="{StaticResource MaterialDesignRaisedLightButton}">
             <Setter Property="materialDesign:RippleAssist.Feedback" Value="#DD000000"></Setter>
@@ -27,8 +27,8 @@
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="35*"/>
-            <RowDefinition Height="35*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="30*"/>
             <RowDefinition Height="183*"/>
         </Grid.RowDefinitions>
         <Border Grid.Row="0"  Background="Tomato" />
