@@ -16,6 +16,54 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <DrawingImage x:Key="curtains">
+            <DrawingImage.Drawing>
+                <DrawingGroup xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    <DrawingGroup x:Name="DrawingLayer">
+                        <DrawingGroup.ClipGeometry>
+                            <RectangleGeometry Rect="0,0,938.286,938.286" />
+                        </DrawingGroup.ClipGeometry>
+                        <DrawingGroup Opacity="1">
+                            <GeometryDrawing Brush="#FF000000">
+                                <GeometryDrawing.Geometry>
+                                    <PathGeometry FillRule="Nonzero" Figures="M152.347,655.675C151.229,655.767 150.112,655.818 149.001,655.818 105.233,655.818 44.016,644.336 0,622.269L0,905.404 223.443,905.404C223.443,772.06,183.884,695.513,152.347,655.675z" />
+                                </GeometryDrawing.Geometry>
+                            </GeometryDrawing>
+                            <GeometryDrawing Brush="#FF000000">
+                                <GeometryDrawing.Geometry>
+                                    <PathGeometry FillRule="Nonzero" Figures="M158.216,544.423C158.744,544.542 159.299,544.681 159.87,544.837 255.084,447.206 302.777,319.942 326.663,216.722 286.612,208.833 247.95,197.568 211.643,183.195 134.899,152.812 69.659,108.853 22.977,56.069L2.47,32.882 0,32.882 0,485.797C0,485.798,84.21,527.735,158.216,544.423z" />
+                                </GeometryDrawing.Geometry>
+                            </GeometryDrawing>
+                            <GeometryDrawing Brush="#FF000000">
+                                <GeometryDrawing.Geometry>
+                                    <PathGeometry FillRule="Nonzero" Figures="M936.742,622.986C915.056,633.527 891.299,640.495 873.173,644.796 843.652,651.801 811.982,655.818 786.285,655.818 785.632,655.818 784.978,655.799 784.322,655.768 752.797,695.632 713.299,772.163 713.299,905.404L936.742,905.404 936.742,622.986z" />
+                                </GeometryDrawing.Geometry>
+                            </GeometryDrawing>
+                            <GeometryDrawing Brush="#FF000000">
+                                <GeometryDrawing.Geometry>
+                                    <PathGeometry FillRule="Nonzero" Figures="M610.079,216.722C633.941,319.837 681.559,446.948 776.579,544.54 776.743,544.501 776.91,544.459 777.07,544.423 849.774,528.029 936.742,486.84 936.742,486.84L936.742,32.882 934.272,32.882 913.765,56.07C867.083,108.853 801.843,152.812 725.098,183.195 688.792,197.568 650.13,208.832 610.079,216.722z" />
+                                </GeometryDrawing.Geometry>
+                            </GeometryDrawing>
+                            <GeometryDrawing Brush="#FF000000">
+                                <GeometryDrawing.Geometry>
+                                    <PathGeometry FillRule="Nonzero" Figures="M333.932,182.479C376.656,190.859 421.752,195.351 468.371,195.351 514.99,195.351 560.086,190.859 602.81,182.479 722.772,158.949 824.01,104.724 887.547,32.883L586.108,32.883 350.634,32.883 49.195,32.883C112.732,104.724,213.97,158.949,333.932,182.479z" />
+                                </GeometryDrawing.Geometry>
+                            </GeometryDrawing>
+                            <GeometryDrawing Brush="#FF000000">
+                                <GeometryDrawing.Geometry>
+                                    <PathGeometry FillRule="Nonzero" Figures="M149.001,620.818C162.907,620.818 159.679,580.631 150.517,578.565 143.405,576.961 136.369,575.278 129.446,573.538 67.156,557.884 14.152,537.573 0,528.023L0,581.934C28.206,600.97 74.12,613.568 114.066,618.488 126.53,620.022 138.42,620.818 149.001,620.818z" />
+                                </GeometryDrawing.Geometry>
+                            </GeometryDrawing>
+                            <GeometryDrawing Brush="#FF000000">
+                                <GeometryDrawing.Geometry>
+                                    <PathGeometry FillRule="Nonzero" Figures="M806.988,573.273C799.666,575.107 792.243,576.88 784.77,578.566 775.608,580.632 772.38,620.819 786.286,620.819 797.152,620.819 809.575,619.984 822.677,618.366 862.496,613.449 908.61,601.25 936.743,582.934 937.256,582.6 937.786,582.272 938.287,581.934L938.287,528.023C937.818,528.339 937.301,528.668 936.743,529.008 920.546,538.857 867.249,558.175 806.988,573.273z" />
+                                </GeometryDrawing.Geometry>
+                            </GeometryDrawing>
+                        </DrawingGroup>
+                    </DrawingGroup>
+                </DrawingGroup>
+            </DrawingImage.Drawing>
+        </DrawingImage>
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -37,8 +85,7 @@
             <Button Style="{StaticResource ImageButtonStyle}" Content="Афиша" FontFamily="Verdana" FontSize="24" FontWeight="Bold" Click="AfishaButton_Click"/>
         </Viewbox>
         <StackPanel Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" Grid.ColumnSpan="2" Orientation="Horizontal">
-            <Image x:Name="Curtainimg" UseLayoutRounding="True" SnapsToDevicePixels="True" 
-       RenderOptions.EdgeMode="Aliased" Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" HorizontalAlignment="Left" VerticalAlignment="Center" Source="Resources\theatreicon.png" Stretch="Uniform" Margin="5"/>
+            <Image Source="{StaticResource curtains}" Margin="5"></Image>
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="15*"/>

@@ -100,8 +100,19 @@
     <Compile Include="Registration.xaml.cs">
       <DependentUpon>Registration.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Scene.xaml.cs">
+      <DependentUpon>Scene.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TAfisha.cs" />
     <Compile Include="TAfisha_dates.cs" />
+    <Compile Include="Ticket.cs" />
+    <Compile Include="Ticket_purchase.xaml.cs">
+      <DependentUpon>Ticket_purchase.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ticket_purchase1.xaml.cs">
+      <DependentUpon>Ticket_purchase1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TTickets.cs" />
     <Compile Include="TUsers.cs" />
     <Compile Include="User.cs" />
     <Page Include="Afisha.xaml">
@@ -133,6 +144,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Registration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Scene.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ticket_purchase.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ticket_purchase1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -196,6 +219,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\reverse-small.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\scheme.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

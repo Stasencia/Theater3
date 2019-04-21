@@ -97,7 +97,6 @@
                     <RowDefinition Height="{Binding ElementName=col, Path=Width}"/>
                 </Grid.RowDefinitions>
             </Grid>
-
             <UniformGrid x:Name="Dates_panel1" Columns="7" Rows="6" Margin="20,0,20,20">
                 
             </UniformGrid>

@@ -83,7 +83,7 @@ namespace Theater
                     b.MouseEnter += new MouseEventHandler(DayBtn_MouseEnter);
                     b.MouseLeave += new MouseEventHandler(DayBtn_MouseLeave);
                     b.Name = "b" + (j * 7 + k);
-                    // b.Click += new System.EventHandler(this.Day_pushed);
+                    b.Click += new RoutedEventHandler(this.Day_pushed);
                     Dates_panel1.Children.Add(b);
                 }
             }
@@ -139,18 +139,18 @@ namespace Theater
             Button b = (Button)sender;
             var animation1 = new DoubleAnimation
             {
-                To = 0.25,
+                To = 0.5,
                 BeginTime = TimeSpan.FromSeconds(0),
-                Duration = TimeSpan.FromSeconds(0.5),
+                Duration = TimeSpan.FromSeconds(0.3),
                 FillBehavior = FillBehavior.Stop
             };
 
-            animation1.Completed += (s, a) => b.SetValue(DayButtonProperties.ImageOpacityProperty, 0.25);
+            animation1.Completed += (s, a) => b.SetValue(DayButtonProperties.ImageOpacityProperty, 0.5);
             var animation2 = new DoubleAnimation
             {
                 To = 1.0,
                 BeginTime = TimeSpan.FromSeconds(0),
-                Duration = TimeSpan.FromSeconds(0.5),
+                Duration = TimeSpan.FromSeconds(0.3),
                 FillBehavior = FillBehavior.Stop
             };
 
@@ -174,6 +174,16 @@ namespace Theater
 
             b.BeginAnimation(DayButtonProperties.ImageOpacityProperty, animation);
             b.BeginAnimation(DayButtonProperties.TextOpacityProperty, animation);
+        }
+        private void Day_pushed(object sender, EventArgs e)
+        {
+            DateTime date = Convert.ToDateTime(((Button)sender).Tag);
+            var query = db.GetTable<TAfisha_dates>()
+                       .Where(l => l.Id_performance == perf_id && l.Date == date)
+                       .Select(l => new { l.Date, l.Id }).First();
+            Ticket_purchase t = new Ticket_purchase(this, query.Id);
+            t.Show();
+            this.Hide();
         }
     }
 }

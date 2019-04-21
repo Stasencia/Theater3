@@ -1,0 +1,113 @@
+﻿<UserControl x:Class="Theater.Scene"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Theater"
+             mc:Ignorable="d" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style TargetType="Button" BasedOn="{StaticResource MaterialDesignRaisedLightButton}">
+            <Setter Property="Background" Value="WhiteSmoke"></Setter>
+            <Setter Property="BorderBrush" Value="Gray"></Setter>
+            <Setter Property="materialDesign:ShadowAssist.Darken" Value="False"></Setter>
+            <EventSetter Event="Click" Handler="SeatClicked"></EventSetter>
+        </Style>
+    </UserControl.Resources>
+    <Grid x:Name="MainGrid">
+        <Image Source="Resources\scheme.jpg"></Image>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="215,180,565,250"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="240,180,540,250"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="265,180,515,250"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="215,205,565,225"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="215,230,565,200"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="190,205,590,225"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="165,230,615,200"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="190,230,590,200"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="338,180,442,250"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="240,205,540,225"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="463,180,317,250"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="240,230,540,200"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="438,180,342,250"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="413,180,367,250"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="388,180,392,250"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="363,180,417,250"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="338,205,442,225"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="313,205,467,225"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="438,205,342,225"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="413,205,367,225"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="388,205,392,225"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="363,205,417,225"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="488,205,292,225"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="463,205,317,225"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="513,180,267,250"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="488,180,292,250"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="538,205,242,225"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="513,205,267,225"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="338,230,442,200"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="313,230,467,200"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="438,230,342,200"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="413,230,367,200"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="388,230,392,200"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="363,230,417,200"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="488,230,292,200"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="463,230,317,200"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="538,230,242,200"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="513,230,267,200"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="288,230,492,200"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="563,230,217,200"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="587,180,193,250"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="612,205,168,225"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="637,180,143,250"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="612,180,168,250"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="662,205,118,225"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="637,205,143,225"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="612,230,168,200"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="662,230,118,200"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="637,230,143,200"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="687,230,93,200"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="338,306,442,124"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="313,306,467,124"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="438,306,342,124"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="413,306,367,124"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="388,306,392,124"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="363,306,417,124"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="488,306,292,124"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="463,306,317,124"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="538,306,242,124"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="513,306,267,124"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="288,306,492,124"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="563,306,217,124"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="338,331,442,99"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="313,331,467,99"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="438,331,342,99"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="413,331,367,99"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="388,331,392,99"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="363,331,417,99"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="488,331,292,99"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="463,331,317,99"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="538,331,242,99"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="513,331,267,99"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="263,306,517,124"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="588,306,192,124"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="563,331,217,99"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="288,331,492,99"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="238,306,542,124"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="263,331,517,99"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="613,306,167,124"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="588,331,192,99"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="338,356,442,74"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="313,356,467,74"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="438,356,342,74"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="413,356,367,74"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="388,356,392,74"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="363,356,417,74"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="488,356,292,74"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="463,356,317,74"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="538,356,242,74"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="513,356,267,74"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="563,356,217,74"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="288,356,492,74"/>
+    </Grid>
+</UserControl>
