@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Theater"
         mc:Ignorable="d"
-        Title="MainWindow" Height="481" Width="800" MinWidth="800" MinHeight="481" Loaded="Window_Loaded" FontFamily="Century Gothic">
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="MainWindow" Height="481" Width="800" MinWidth="800" MinHeight="481" FontFamily="Century Gothic">
     <Window.Resources>
         <Style TargetType="{x:Type Button}" x:Key="ImageButtonStyle">
             <Setter Property="Template">
@@ -71,20 +72,15 @@
             <ColumnDefinition Width="199*"/>
             <ColumnDefinition Width="38*"/>
             <ColumnDefinition Width="196*"/>
-            <ColumnDefinition Width="99*"/>
-            <ColumnDefinition Width="199*"/>
+            <ColumnDefinition Width="298*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="17*"/>
-            <RowDefinition Height="29*"/>
-            <RowDefinition Height="17*"/>
+            <RowDefinition Height="63*"/>
             <RowDefinition Height="388*"/>
         </Grid.RowDefinitions>
-        <Image HorizontalAlignment="Center" VerticalAlignment="Center" Source="Resources\opera02.jpg" Stretch="UniformToFill" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="6" />
-        <Viewbox Grid.Column="3" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Button Style="{StaticResource ImageButtonStyle}" Content="Афиша" FontFamily="Verdana" FontSize="24" FontWeight="Bold" Click="AfishaButton_Click"/>
-        </Viewbox>
-        <StackPanel Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" Grid.ColumnSpan="2" Orientation="Horizontal">
+        <Image HorizontalAlignment="Center" VerticalAlignment="Center" Source="Resources\opera02.jpg" Stretch="UniformToFill" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="5"/>
+        <Button Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ImageButtonStyle}" Content="Афиша" FontFamily="Verdana" FontSize="28" FontWeight="Bold" Click="AfishaButton_Click"/>
+        <StackPanel Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Orientation="Horizontal">
             <Image Source="{StaticResource curtains}" Margin="5"></Image>
             <Grid>
                 <Grid.RowDefinitions>
@@ -97,11 +93,29 @@
                 </Viewbox>
             </Grid>
         </StackPanel>
-        <Viewbox Grid.Column="5" Grid.Row="1" HorizontalAlignment="Right">
-            <StackPanel Orientation="Horizontal" Margin="5">
-                <Button Style="{StaticResource ImageButtonStyle}"  Click="Button_Click" Content="Авторизация / " VerticalAlignment="Center"/>
-                <Button Style="{StaticResource ImageButtonStyle}" Content="Регистрация" VerticalAlignment="Center" Click="Button_Click_1"/>
-            </StackPanel>
-        </Viewbox>
+        <StackPanel Orientation="Horizontal" Margin="5" x:Name="UserManagement" Grid.Column="4" HorizontalAlignment="Right">
+            <Button x:Name="AuthorizationBtn" Style="{StaticResource ImageButtonStyle}" Content="Авторизация / " VerticalAlignment="Center" Click="AuthorizationBtn_Click"/>
+            <Button x:Name="RegistrationBtn" Style="{StaticResource ImageButtonStyle}" Content="Регистрация" VerticalAlignment="Center" Click="RegistrationBtn_Click"/>
+            <materialDesign:PopupBox x:Name="UserBox" Width="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}" Background="MediumSeaGreen" BorderBrush="MediumSeaGreen" 
+  Style="{StaticResource MaterialDesignMultiFloatingActionAccentPopupBox}"
+  PlacementMode="BottomAndAlignRightEdges"
+  ToggleCheckedContentCommand="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Button}, Path=FloatingActionDemoCommand}"
+  ToggleCheckedContentCommandParameter="wowsers">
+                <materialDesign:PopupBox.ToggleCheckedContent>
+                    <materialDesign:PackIcon
+      Kind="DotsHorizontal"
+      Width="24"
+      Height="24" />
+                </materialDesign:PopupBox.ToggleCheckedContent>
+                <StackPanel>
+                    <Button x:Name="My_AccountBtn" Style="{StaticResource MaterialDesignRaisedAccentButton}" Background="White" BorderBrush="White" Foreground="Black" HorizontalContentAlignment="Right" Click="My_AccountBtn_Click">
+                        Личный кабинет
+                    </Button>
+                    <Button x:Name="SignOutBtn" Style="{StaticResource MaterialDesignRaisedAccentButton}" Background="White" BorderBrush="White" Foreground="Black" HorizontalContentAlignment="Right" Click="SignOutBtn_Click">
+                        Сменить пользователя
+                    </Button>
+                </StackPanel>
+            </materialDesign:PopupBox>
+        </StackPanel>
     </Grid>
 </Window>

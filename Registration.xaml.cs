@@ -19,16 +19,18 @@ namespace Theater
     /// </summary>
     public partial class Registration
     {
+        MainWindow mainWindow;
         private static Registration instance;
-        public static Registration GetInstance()
+        public static Registration GetInstance(MainWindow mainWindow)
         {
             if (instance == null)
-                instance = new Registration();
+                instance = new Registration(mainWindow);
             return instance;
         }
-        protected Registration()
+        protected Registration(MainWindow mainWindow)
         {
             InitializeComponent();
+            this.mainWindow = mainWindow;
         }
 
         private void RegistrateBtn_Click(object sender, RoutedEventArgs e)
@@ -41,6 +43,8 @@ namespace Theater
         private void MetroWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             instance = null;
+            mainWindow.CurrentUserCheck();
+            mainWindow.Show();
         }
         private void DialogClose(object sender, RoutedEventArgs e)
         {

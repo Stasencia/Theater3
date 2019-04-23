@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Theater"
         mc:Ignorable="d"
             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="Authorization" Height="300" Width="270" FontFamily="Century Gothic" Closing="MetroWindow_Closing">
+        Title="Authorization" Height="300" Width="270" FontFamily="Century Gothic" Closing="Window_Closing">
     <Window.Resources>
     </Window.Resources>
     <materialDesign:DialogHost>

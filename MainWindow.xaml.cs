@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialDesignThemes.Wpf;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,29 +24,55 @@ namespace Theater
         public MainWindow()
         {
             InitializeComponent();
+            UserBox.Visibility = Visibility.Collapsed;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void AuthorizationBtn_Click(object sender, RoutedEventArgs e)
         {
-            Authorization authorization = Authorization.GetInstance();
+            Authorization authorization = Authorization.GetInstance(this);
             authorization.Show();
+            this.Hide();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void RegistrationBtn_Click(object sender, RoutedEventArgs e)
         {
-            Registration registration = Registration.GetInstance();
+            Registration registration = Registration.GetInstance(this);
             registration.Show();
+            this.Hide();
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        public void CurrentUserCheck()
         {
-           
+            if (User.CurrentUser.ID == 0)
+            {
+                AuthorizationBtn.Visibility = Visibility.Visible;
+                RegistrationBtn.Visibility = Visibility.Visible;
+                UserBox.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                AuthorizationBtn.Visibility = Visibility.Collapsed;
+                RegistrationBtn.Visibility = Visibility.Collapsed;
+                UserBox.Visibility = Visibility.Visible;
+            }
         }
 
         private void AfishaButton_Click(object sender, RoutedEventArgs e)
         {
             Afisha afisha = new Afisha();
             afisha.Show();
+        }
+
+        private void My_AccountBtn_Click(object sender, RoutedEventArgs e)
+        {
+            My_Account my_Account = new My_Account(this);
+            my_Account.Show();
+        }
+
+        private void SignOutBtn_Click(object sender, RoutedEventArgs e)
+        {
+            User.SignOut();
+            CurrentUserCheck();
         }
     }
 }

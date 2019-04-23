@@ -19,16 +19,18 @@ namespace Theater
     /// </summary>
     public partial class Authorization
     {
+        MainWindow mainWindow;
         private static Authorization instance;
-        public static Authorization GetInstance()
+        public static Authorization GetInstance(MainWindow mainWindow)
         {
             if (instance == null)
-                instance = new Authorization();
-            return instance;
+                instance = new Authorization(mainWindow);
+            return instance;  
         }
-        protected Authorization()
+        protected Authorization(MainWindow mainWindow)
         {
             InitializeComponent();
+            this.mainWindow = mainWindow;
         }
 
         private void Button_ClickAsync(object sender, RoutedEventArgs e)
@@ -38,9 +40,11 @@ namespace Theater
             User.Authorization(this, Login, Password);
         }
 
-        private void MetroWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             instance = null;
+            mainWindow.CurrentUserCheck();
+            mainWindow.Show();
         }
         private void DialogClose(object sender, RoutedEventArgs e)
         {

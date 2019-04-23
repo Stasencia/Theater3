@@ -89,6 +89,11 @@ namespace Theater
             }
         }
 
+        public static void SignOut()
+        {
+            CurrentUser.ID = 0;
+        }
+
         /* public void Login_change(string new_login, string initial_login, My_Account account)
          {
              if (!string.IsNullOrWhiteSpace(new_login) && !string.IsNullOrEmpty(new_login))
