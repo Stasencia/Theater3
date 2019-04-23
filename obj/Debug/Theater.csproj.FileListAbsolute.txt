@@ -76,3 +76,7 @@ C:\Users\Stasia\Desktop\Theater\Theater\obj\Debug\Resources\tickets.baml
 C:\Users\Stasia\Desktop\Theater\Theater\obj\Debug\My_Account.g.cs
 C:\Users\Stasia\Desktop\Theater\Theater\obj\Debug\My_Account.baml
 C:\Users\Stasia\Desktop\Theater\Theater\obj\Debug\PopupBoxDictionary.baml
+C:\Users\Stasia\Desktop\Theater\Theater\obj\Debug\PurchasedTicket.g.cs
+C:\Users\Stasia\Desktop\Theater\Theater\obj\Debug\PurchasedTickets.g.cs
+C:\Users\Stasia\Desktop\Theater\Theater\obj\Debug\PurchasedTicket.baml
+C:\Users\Stasia\Desktop\Theater\Theater\obj\Debug\PurchasedTickets.baml

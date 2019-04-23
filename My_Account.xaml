@@ -175,6 +175,8 @@
                 </StackPanel>
             </Button>
         </StackPanel>
-        
+        <Grid x:Name="ContentGrid" Grid.Column="1" Grid.Row="1">
+            <local:PurchasedTickets></local:PurchasedTickets>
+        </Grid>
     </Grid>
 </Window>

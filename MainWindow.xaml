@@ -68,35 +68,28 @@
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="61*"/>
             <ColumnDefinition Width="199*"/>
-            <ColumnDefinition Width="38*"/>
-            <ColumnDefinition Width="196*"/>
-            <ColumnDefinition Width="298*"/>
+            <ColumnDefinition Width="143*"/>
+            <ColumnDefinition Width="108*"/>
+            <ColumnDefinition Width="143*"/>
+            <ColumnDefinition Width="199*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="63*"/>
             <RowDefinition Height="388*"/>
         </Grid.RowDefinitions>
         <Image HorizontalAlignment="Center" VerticalAlignment="Center" Source="Resources\opera02.jpg" Stretch="UniformToFill" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="5"/>
-        <Button Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ImageButtonStyle}" Content="Афиша" FontFamily="Verdana" FontSize="28" FontWeight="Bold" Click="AfishaButton_Click"/>
-        <StackPanel Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Orientation="Horizontal">
-            <Image Source="{StaticResource curtains}" Margin="5"></Image>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="15*"/>
-                    <RowDefinition Height="31*"/>
-                    <RowDefinition Height="15*"/>
-                </Grid.RowDefinitions>
-                <Viewbox Grid.Column="1" Grid.Row="1" VerticalAlignment="Center">
-                    <TextBlock FontSize="14" ><Run Text="Театр имени "/><LineBreak/><Run Text="Ольги Кобылянской"/></TextBlock>
-                </Viewbox>
-            </Grid>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" Margin="5" x:Name="UserManagement" Grid.Column="4" HorizontalAlignment="Right">
-            <Button x:Name="AuthorizationBtn" Style="{StaticResource ImageButtonStyle}" Content="Авторизация / " VerticalAlignment="Center" Click="AuthorizationBtn_Click"/>
-            <Button x:Name="RegistrationBtn" Style="{StaticResource ImageButtonStyle}" Content="Регистрация" VerticalAlignment="Center" Click="RegistrationBtn_Click"/>
-            <materialDesign:PopupBox x:Name="UserBox" Width="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}" Background="MediumSeaGreen" BorderBrush="MediumSeaGreen" 
+        <Viewbox Grid.Column="2">
+            <Button HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ImageButtonStyle}" Content="Афиша" FontFamily="Verdana" FontSize="28" FontWeight="Bold" Click="AfishaButton_Click"/>
+        </Viewbox>
+        <DockPanel Margin="5,5,0,5">
+            <Image Source="{StaticResource curtains}"></Image>
+            <Viewbox Grid.Row="1" Margin="5,0,0,0">
+                <TextBlock>Театр имени<LineBreak/> Ольги Кобылянской</TextBlock>
+            </Viewbox>
+        </DockPanel>
+        <DockPanel Grid.Column="4" Margin="0,5,5,5" x:Name="UserManagement" HorizontalAlignment="Right">
+            <materialDesign:PopupBox Visibility="Collapsed" DockPanel.Dock="Right" x:Name="UserBox" Width="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}" Background="MediumSeaGreen" BorderBrush="MediumSeaGreen" 
   Style="{StaticResource MaterialDesignMultiFloatingActionAccentPopupBox}"
   PlacementMode="BottomAndAlignRightEdges"
   ToggleCheckedContentCommand="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Button}, Path=FloatingActionDemoCommand}"
@@ -116,6 +109,14 @@
                     </Button>
                 </StackPanel>
             </materialDesign:PopupBox>
-        </StackPanel>
+            <Viewbox>
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="AuthorizationBtn" Style="{StaticResource ImageButtonStyle}" Content="Авторизация / " VerticalAlignment="Center" Click="AuthorizationBtn_Click"/>
+                    <Button x:Name="RegistrationBtn" Style="{StaticResource ImageButtonStyle}" Content="Регистрация" VerticalAlignment="Center" Click="RegistrationBtn_Click"/>
+                </StackPanel>
+            </Viewbox>
+
+        </DockPanel>
+
     </Grid>
 </Window>

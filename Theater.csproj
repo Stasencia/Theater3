@@ -100,6 +100,12 @@
     <Compile Include="Performance_list.xaml.cs">
       <DependentUpon>Performance_list.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PurchasedTicket.xaml.cs">
+      <DependentUpon>PurchasedTicket.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PurchasedTickets.xaml.cs">
+      <DependentUpon>PurchasedTickets.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Registration.xaml.cs">
       <DependentUpon>Registration.xaml</DependentUpon>
     </Compile>
@@ -151,6 +157,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PopupBoxDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PurchasedTicket.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PurchasedTickets.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
