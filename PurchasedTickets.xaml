@@ -14,8 +14,9 @@
         </Grid.RowDefinitions>
         <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16">Список купленных билетов</Label>
         <ScrollViewer Grid.Row="1">
-            <DockPanel x:Name="TicketsPanel">
-                <local:PurchasedTicket DockPanel.Dock="Top"></local:PurchasedTicket>
+            <DockPanel>
+                <local:PurchasedTicket HorizontalAlignment="Stretch"  DockPanel.Dock="Top" Margin="5"></local:PurchasedTicket>
+                <local:PurchasedTicket HorizontalAlignment="Stretch" DockPanel.Dock="Top" Margin="5"></local:PurchasedTicket>
             </DockPanel>
         </ScrollViewer>
     </Grid>

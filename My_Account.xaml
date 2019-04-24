@@ -142,24 +142,24 @@
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="241*"/>
+            <ColumnDefinition Width="241*" MaxWidth="241"/>
             <ColumnDefinition Width="551*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="31*"/>
+            <RowDefinition Height="31*" MaxHeight="70"/>
             <RowDefinition Height="179*"/>
         </Grid.RowDefinitions>
         <Border Grid.Column="1" Background="#FF00BCD4"></Border>
         <Border Background="#FF07808F"></Border>
         <Border Grid.Row="1" Background="#FF00BCD4"></Border>
-        <Label Grid.Column="1" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Century Gothic" Height="34" Margin="121,14,124,14" Width="306">Личный кабинет пользователя</Label>
+        <Label Grid.Column="1" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontWeight="Bold">Личный кабинет пользователя</Label>
         <Button x:Name="HomePageBtn" Click="HomePageBtn_Click" Height="Auto" Background="{x:Null}" HorizontalContentAlignment="Left" HorizontalAlignment="Left" BorderBrush="{x:Null}" materialDesign:ShadowAssist.ShadowDepth="Depth0">
-            <StackPanel Orientation="Horizontal">
-                <Image Source="{StaticResource curtains}" Margin="5"></Image>
+            <DockPanel HorizontalAlignment="Left">
+                <Image DockPanel.Dock="Left" Source="{StaticResource curtains}" Margin="5"></Image>
                 <Label VerticalAlignment="Center">
                     <TextBlock FontSize="14" Foreground="White">Театр имени<LineBreak/>Ольги Кобылянской</TextBlock>
                 </Label>
-            </StackPanel>
+            </DockPanel>
         </Button>
         <StackPanel Grid.Row="1" VerticalAlignment="Center">
             <Button x:Name="PurchasedTicketsBtn" Click="PurchasedTicketsBtn_Click" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Height="Auto" BorderBrush="#FF07808F">

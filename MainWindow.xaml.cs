@@ -24,7 +24,7 @@ namespace Theater
         public MainWindow()
         {
             InitializeComponent();
-            UserBox.Visibility = Visibility.Collapsed;
+            //UserBox.Visibility = Visibility.Collapsed;
         }
 
         private void AuthorizationBtn_Click(object sender, RoutedEventArgs e)
