@@ -163,9 +163,14 @@
                     <RowDefinition Height="14*"/>
                     <RowDefinition Height="34*"/>
                 </Grid.RowDefinitions>
-                <Label>
-                    <TextBlock x:Name="PerformanceName" TextWrapping="Wrap" FontWeight="Bold" FontSize="16">Реверс</TextBlock>
-                </Label>
+                <DockPanel>
+                    <Label>
+                        <TextBlock x:Name="PerformanceName" TextWrapping="Wrap" FontWeight="Bold" FontSize="16">Реверс</TextBlock>
+                    </Label>
+                    <Label Visibility="Collapsed" x:Name="CancelledText">
+                        <TextBlock TextWrapping="Wrap" FontSize="16" Foreground="DarkRed">Отменено!</TextBlock>
+                    </Label>
+                </DockPanel>
                 <Label Grid.Row="1">
                     <TextBlock x:Name="PerformanceDate" TextWrapping="Wrap">20.05.2019</TextBlock>
                 </Label>

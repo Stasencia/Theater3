@@ -11,6 +11,7 @@
         <Style TargetType="Button" BasedOn="{StaticResource MaterialDesignRaisedLightButton}">
             <Setter Property="Background" Value="WhiteSmoke"></Setter>
             <Setter Property="BorderBrush" Value="Gray"></Setter>
+            <Setter Property="VerticalContentAlignment" Value="Top"></Setter>
             <Setter Property="materialDesign:ShadowAssist.Darken" Value="False"></Setter>
             <EventSetter Event="Click" Handler="SeatClicked"></EventSetter>
         </Style>
@@ -19,6 +20,7 @@
         <Image Source="Resources\scheme.jpg"></Image>
         <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="215,180,565,250"/>
         <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="240,180,540,250"/>
+        <Label Margin="241,177,542,248" VerticalContentAlignment="Top">2</Label>
         <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="265,180,515,250"/>
         <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="215,205,565,225"/>
         <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="215,230,565,200"/>

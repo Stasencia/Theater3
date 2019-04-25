@@ -20,10 +20,12 @@ namespace Theater
     public partial class My_Account : Window
     {
         MainWindow mainWindow;
+        PurchasedTickets purchasedTickets;
         public My_Account(MainWindow mainWindow)
         {
             InitializeComponent();
             this.mainWindow = mainWindow;
+            purchasedTickets = new PurchasedTickets();
         }
 
         private void HomePageBtn_Click(object sender, RoutedEventArgs e)
@@ -34,12 +36,19 @@ namespace Theater
 
         private void PersonalInfoBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         private void PurchasedTicketsBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            ContentGrid.Children.Clear();
+            purchasedTickets.TicketPanel.Children.Clear();
+            List<PurchasedTicket> showTickets = Ticket.Show_tickets();
+            foreach(PurchasedTicket ticket in showTickets)
+            {
+                purchasedTickets.TicketPanel.Children.Add(ticket);
+            }
+            ContentGrid.Children.Add(purchasedTickets);
         }
     }
 }

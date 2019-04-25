@@ -115,6 +115,7 @@
     <Compile Include="TAfisha.cs" />
     <Compile Include="TAfisha_dates.cs" />
     <Compile Include="Ticket.cs" />
+    <Compile Include="TicketSellInfo.cs" />
     <Compile Include="Ticket_purchase.xaml.cs">
       <DependentUpon>Ticket_purchase.xaml</DependentUpon>
     </Compile>

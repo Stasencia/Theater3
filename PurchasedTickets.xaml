@@ -6,7 +6,6 @@
              xmlns:local="clr-namespace:Theater"
              mc:Ignorable="d" 
              d:DesignHeight="358" d:DesignWidth="551" FontFamily="Century Gothic">
-    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="55*"/>
@@ -14,8 +13,7 @@
         </Grid.RowDefinitions>
         <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16">Список купленных билетов</Label>
         <ScrollViewer Grid.Row="1">
-            <DockPanel>
-                <local:PurchasedTicket HorizontalAlignment="Stretch"  DockPanel.Dock="Top" Margin="5"></local:PurchasedTicket>
+            <DockPanel x:Name="TicketPanel">
                 <local:PurchasedTicket HorizontalAlignment="Stretch" DockPanel.Dock="Top" Margin="5"></local:PurchasedTicket>
             </DockPanel>
         </ScrollViewer>
