@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Theater"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="Ticket_purchase1" Height="500" Width="800" FontFamily="Century Gothic">
+        Title="Ticket_purchase1" Height="500" Width="800" FontFamily="Century Gothic" Closing="Window_Closing">
     <Window.Resources>
         <Style x:Key="Seat" TargetType="Button" BasedOn="{StaticResource MaterialDesignRaisedLightButton}">
             <Setter Property="Background" Value="White"></Setter>

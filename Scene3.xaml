@@ -5,10 +5,12 @@
              xmlns:sc="http://www.w3.org/2000/svg" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Theater"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
         <Style x:Key="Seat" TargetType="Button" BasedOn="{StaticResource MaterialDesignRaisedLightButton}">
+            <Setter Property="materialDesign:RippleAssist.Feedback" Value="#DD000000"></Setter>
             <Setter Property="Background" Value="White"></Setter>
             <Setter Property="Foreground" Value="White"></Setter>
             <Setter Property="BorderBrush" Value="Black"></Setter>
@@ -309,15 +311,83 @@
                         <Button Style="{StaticResource Seat}" Margin="934,288,275,546">1</Button>
                     </Grid>
                     <Grid x:Name="RightRow5">
-                        <Button Style="{StaticResource Seat}" Margin="680,288,531,546">9</Button>
-                        <Button Style="{StaticResource Seat}" Margin="712,288,499,546">8</Button>
-                        <Button Style="{StaticResource Seat}" Margin="744,288,467,546">7</Button>
-                        <Button Style="{StaticResource Seat}" Margin="776,288,435,546">6</Button>
-                        <Button Style="{StaticResource Seat}" Margin="806,288,403,546">5</Button>
-                        <Button Style="{StaticResource Seat}" Margin="838,288,371,546">4</Button>
-                        <Button Style="{StaticResource Seat}" Margin="870,288,339,546">3</Button>
-                        <Button Style="{StaticResource Seat}" Margin="902,288,307,546">2</Button>
-                        <Button Style="{StaticResource Seat}" Margin="934,288,275,546">1</Button>
+                        <Button Style="{StaticResource Seat}" Margin="680,323,531,511">10</Button>
+                        <Button Style="{StaticResource Seat}" Margin="712,323,499,511">9</Button>
+                        <Button Style="{StaticResource Seat}" Margin="744,323,467,511">8</Button>
+                        <Button Style="{StaticResource Seat}" Margin="776,323,435,511">7</Button>
+                        <Button Style="{StaticResource Seat}" Margin="806,323,403,511">6</Button>
+                        <Button Style="{StaticResource Seat}" Margin="838,323,371,511">5</Button>
+                        <Button Style="{StaticResource Seat}" Margin="870,323,339,511">4</Button>
+                        <Button Style="{StaticResource Seat}" Margin="902,323,307,511">3</Button>
+                        <Button Style="{StaticResource Seat}" Margin="934,323,275,511">2</Button>
+                        <Button Style="{StaticResource Seat}" Margin="966,323,253,511">1</Button>
+                    </Grid>
+                    <Grid x:Name="RightRow6">
+                        <Button Style="{StaticResource Seat}" Margin="680,358,531,476">10</Button>
+                        <Button Style="{StaticResource Seat}" Margin="712,358,499,476">9</Button>
+                        <Button Style="{StaticResource Seat}" Margin="744,358,467,476">8</Button>
+                        <Button Style="{StaticResource Seat}" Margin="776,358,435,476">7</Button>
+                        <Button Style="{StaticResource Seat}" Margin="806,358,403,476">6</Button>
+                        <Button Style="{StaticResource Seat}" Margin="838,358,371,476">5</Button>
+                        <Button Style="{StaticResource Seat}" Margin="870,358,339,476">4</Button>
+                        <Button Style="{StaticResource Seat}" Margin="902,358,307,476">3</Button>
+                        <Button Style="{StaticResource Seat}" Margin="934,358,275,476">2</Button>
+                        <Button Style="{StaticResource Seat}" Margin="966,358,253,476">1</Button>
+                    </Grid>
+                    <Grid x:Name="RightRow7">
+                        <Button Style="{StaticResource Seat}" Margin="680,393,531,441">11</Button>
+                        <Button Style="{StaticResource Seat}" Margin="712,393,499,441">10</Button>
+                        <Button Style="{StaticResource Seat}" Margin="744,393,467,441">9</Button>
+                        <Button Style="{StaticResource Seat}" Margin="776,393,435,441">8</Button>
+                        <Button Style="{StaticResource Seat}" Margin="806,393,403,441">7</Button>
+                        <Button Style="{StaticResource Seat}" Margin="838,393,371,441">6</Button>
+                        <Button Style="{StaticResource Seat}" Margin="870,393,339,441">5</Button>
+                        <Button Style="{StaticResource Seat}" Margin="902,393,307,441">4</Button>
+                        <Button Style="{StaticResource Seat}" Margin="934,393,275,441">3</Button>
+                        <Button Style="{StaticResource Seat}" Margin="966,393,253,441">2</Button>
+                        <Button Style="{StaticResource Seat}" Margin="998,393,221,441">1</Button>
+                    </Grid>
+                    <Grid x:Name="RightRow8">
+                        <Button Style="{StaticResource Seat}" Margin="680,430,531,404">12</Button>
+                        <Button Style="{StaticResource Seat}" Margin="712,430,499,404">11</Button>
+                        <Button Style="{StaticResource Seat}" Margin="744,430,467,404">10</Button>
+                        <Button Style="{StaticResource Seat}" Margin="776,430,435,404">9</Button>
+                        <Button Style="{StaticResource Seat}" Margin="806,430,403,404">8</Button>
+                        <Button Style="{StaticResource Seat}" Margin="838,430,371,404">7</Button>
+                        <Button Style="{StaticResource Seat}" Margin="870,430,339,404">6</Button>
+                        <Button Style="{StaticResource Seat}" Margin="902,430,307,404">5</Button>
+                        <Button Style="{StaticResource Seat}" Margin="934,430,275,404">4</Button>
+                        <Button Style="{StaticResource Seat}" Margin="966,430,253,404">3</Button>
+                        <Button Style="{StaticResource Seat}" Margin="998,430,221,404">2</Button>
+                        <Button Style="{StaticResource Seat}" Margin="1030,430,189,404">1</Button>
+                    </Grid>
+                    <Grid x:Name="RightRow9">
+                        <Button Style="{StaticResource Seat}" Margin="680,465,531,369">12</Button>
+                        <Button Style="{StaticResource Seat}" Margin="712,465,499,369">11</Button>
+                        <Button Style="{StaticResource Seat}" Margin="744,465,467,369">10</Button>
+                        <Button Style="{StaticResource Seat}" Margin="776,465,435,369">9</Button>
+                        <Button Style="{StaticResource Seat}" Margin="806,465,403,369">8</Button>
+                        <Button Style="{StaticResource Seat}" Margin="838,465,371,369">7</Button>
+                        <Button Style="{StaticResource Seat}" Margin="870,465,339,369">6</Button>
+                        <Button Style="{StaticResource Seat}" Margin="902,465,307,369">5</Button>
+                        <Button Style="{StaticResource Seat}" Margin="934,465,275,369">4</Button>
+                        <Button Style="{StaticResource Seat}" Margin="966,465,253,369">3</Button>
+                        <Button Style="{StaticResource Seat}" Margin="998,465,221,369">2</Button>
+                        <Button Style="{StaticResource Seat}" Margin="1030,465,189,369">1</Button>
+                    </Grid>
+                    <Grid x:Name="RightRow10">
+                        <Button Style="{StaticResource Seat}" Margin="680,500,531,334">12</Button>
+                        <Button Style="{StaticResource Seat}" Margin="712,500,499,334">11</Button>
+                        <Button Style="{StaticResource Seat}" Margin="744,500,467,334">10</Button>
+                        <Button Style="{StaticResource Seat}" Margin="776,500,435,334">9</Button>
+                        <Button Style="{StaticResource Seat}" Margin="806,500,403,334">8</Button>
+                        <Button Style="{StaticResource Seat}" Margin="838,500,371,334">7</Button>
+                        <Button Style="{StaticResource Seat}" Margin="870,500,339,334">6</Button>
+                        <Button Style="{StaticResource Seat}" Margin="902,500,307,334">5</Button>
+                        <Button Style="{StaticResource Seat}" Margin="934,500,275,334">4</Button>
+                        <Button Style="{StaticResource Seat}" Margin="966,500,253,334">3</Button>
+                        <Button Style="{StaticResource Seat}" Margin="998,500,221,334">2</Button>
+                        <Button Style="{StaticResource Seat}" Margin="1030,500,189,334">1</Button>
                     </Grid>
                 </Grid>
             <Grid x:Name="LojiBenuara">
