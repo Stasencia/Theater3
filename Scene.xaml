@@ -18,16 +18,16 @@
     </UserControl.Resources>
     <Grid x:Name="MainGrid">
         <Image Source="Resources\scheme.jpg"></Image>
-        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="215,180,565,250"/>
-        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="240,180,540,250"/>
-        <Label Margin="241,177,542,248" VerticalContentAlignment="Top">2</Label>
-        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="265,180,515,250"/>
-        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="215,205,565,225"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="215,180,565,250" FontSize="13" Padding="0">1</Button>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="240,180,540,250" FontSize="13" Padding="0">2</Button>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="265,180,515,250" FontSize="13" Padding="0" Content="3"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="338,180,442,250" FontSize="13" Padding="0" Content="4"/>
+        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="215,205,565,225" FontSize="13" Padding="0" Content="2"/>
         <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="215,230,565,200"/>
         <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="190,205,590,225"/>
         <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="165,230,615,200"/>
         <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="190,230,590,200"/>
-        <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="338,180,442,250"/>
+        
         <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="240,205,540,225"/>
         <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="463,180,317,250"/>
         <Button HorizontalAlignment="Center" Width="20" Height="20" Margin="240,230,540,200"/>

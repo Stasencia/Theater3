@@ -5,40 +5,69 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Theater"
         mc:Ignorable="d"
-        Title="Ticket_purchase1" Height="450" Width="800" FontFamily="Century Gothic" FontSize="18">
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Ticket_purchase1" Height="500" Width="800" FontFamily="Century Gothic">
+    <Window.Resources>
+        <Style x:Key="Seat" TargetType="Button" BasedOn="{StaticResource MaterialDesignRaisedLightButton}">
+            <Setter Property="Background" Value="White"></Setter>
+            <Setter Property="Foreground" Value="White"></Setter>
+            <Setter Property="BorderBrush" Value="Black"></Setter>
+            <Setter Property="Height" Value="20"></Setter>
+            <Setter Property="Width" Value="20"></Setter>
+            <Setter Property="FontFamily" Value="Sugeoe UI"></Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Ellipse Fill="Tomato">
+                            </Ellipse>
+                            <ContentPresenter HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition Height="6*"/>
+            <RowDefinition Height="55*"/>
+            <RowDefinition Height="391*"/>
+            <RowDefinition Height="24*"/>
         </Grid.RowDefinitions>
-        <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="20">Реверс</Label>
-        <Label Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">20.05.2019 19:00</Label>
-        <Viewbox Grid.Row="1">
-            <Grid>
-                <Path Data="M1098.429,207.103 c-28.104,0-50.888-41.985-50.888-93.777c0-51.791,22.783-93.776,50.888-93.776" Stroke="Black" StrokeThickness="5"></Path>
-                <Path Data="M616.541,851.101
-			    c-265.435-27-553.064-104.475-543.344-218.295l39.437-440.909l70.201,2.706l-34.424,403.771
-			    c-8.226,101.015,247.964,143.009,468.128,182.082L616.541,851.101L616.541,851.101z" Stroke="Black" StrokeThickness="5" StrokeMiterLimit="10"></Path>
-                <Path Data="M684.956,851.101 c265.437-27,553.065-104.475,543.346-218.295l-39.438-440.909l-70.201,2.706l34.426,403.771 c8.226,101.016-247.966,143.01-468.132,182.082L684.956,851.101L684.956,851.101z" Stroke="Black" StrokeThickness="5"></Path>
-                <Line X1="175.263" Y1="283.415" X2="105.147" Y2="283.415" Stroke="Black" StrokeThickness="5"></Line>
-                <Ellipse Margin="121,202,1090,632" Fill="Tomato" Height="20" Width="20"></Ellipse>
-            </Grid>
-        </Viewbox>
-        <Grid Grid.Column="1" Grid.Row="1">
+        <Border Panel.ZIndex="1" Background="White" ></Border>
+        <Label Panel.ZIndex="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Black" FontSize="22" Margin="218,9">Реверс</Label>
+        <Border Panel.ZIndex="1" Background="White" Grid.Column="1"></Border>
+        <StackPanel Panel.ZIndex="1" Grid.Column="1" VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Center" Margin="57,12,57,13">
+            <materialDesign:PackIcon  HorizontalAlignment="Center" VerticalAlignment="Center" Kind="DateRange"></materialDesign:PackIcon>
+            <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16">20.05.2019 19:00</Label>
+        </StackPanel>
+        <local:Scene3 Grid.Row="1">
+        </local:Scene3>
+        <Border Grid.Row="2" Panel.ZIndex="1" Background="White" Grid.RowSpan="2"></Border>
+        <Slider Grid.Row="2" Panel.ZIndex="1" x:Name="ZoomSlider" Minimum="1" Maximum="5" Width="300" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Border Grid.Column="1" Grid.Row="1" Panel.ZIndex="1" Background="White" Grid.RowSpan="2"></Border>
+        <Grid Grid.Column="1" Grid.Row="1" x:Name="InfoGrid"  Panel.ZIndex="1" Grid.RowSpan="2">
             <Grid.RowDefinitions>
-                <RowDefinition Height="279*"/>
-                <RowDefinition Height="50*"/>
-                <RowDefinition Height="50*"/>
+                <RowDefinition Height="61*"/>
+                <RowDefinition Height="29*"/>
             </Grid.RowDefinitions>
             <ScrollViewer>
-                <StackPanel></StackPanel>
+                <StackPanel>
+                   
+                </StackPanel>
             </ScrollViewer>
-            <Label Grid.Row="1" VerticalAlignment="Center">Цена: 0 грн.</Label>
-            <Button Grid.Row="2" HorizontalAlignment="Center" FontSize="18">Купить билеты</Button>
+            <StackPanel Grid.Row="1">
+                <Label VerticalAlignment="Center" FontSize="15">Цена: 0 грн.</Label>
+                <Label Grid.Row="2" VerticalAlignment="Center" FontSize="15">Скидка: 5%</Label>
+                <Label Grid.Row="3" VerticalAlignment="Center" FontSize="17" FontWeight="Black">Всего: 0 грн.</Label>
+                <Button Grid.Row="4" HorizontalAlignment="Center" FontSize="16">Купить билеты</Button>
+            </StackPanel>
         </Grid>
     </Grid>
 </Window>

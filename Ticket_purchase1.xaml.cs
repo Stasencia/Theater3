@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -19,9 +20,16 @@ namespace Theater
     /// </summary>
     public partial class Ticket_purchase1 : Window
     {
-        public Ticket_purchase1(int x)
+        Performance perf;
+        public Ticket_purchase1(Performance perf, int x)
         {
             InitializeComponent();
+            this.perf = perf;
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            perf.Show();
         }
     }
 }

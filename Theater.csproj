@@ -112,6 +112,12 @@
     <Compile Include="Scene.xaml.cs">
       <DependentUpon>Scene.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Scene2.xaml.cs">
+      <DependentUpon>Scene2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Scene3.xaml.cs">
+      <DependentUpon>Scene3.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TAfisha.cs" />
     <Compile Include="TAfisha_dates.cs" />
     <Compile Include="Ticket.cs" />
@@ -178,6 +184,14 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Scene.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Scene2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Scene3.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

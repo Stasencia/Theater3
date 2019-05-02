@@ -64,7 +64,6 @@ C:\Users\Stasia\Desktop\Theater\Theater\bin\Debug\MaterialDesignThemes.Wpf.pdb
 C:\Users\Stasia\Desktop\Theater\Theater\bin\Debug\MaterialDesignThemes.Wpf.xml
 C:\Users\Stasia\Desktop\Theater\Theater\obj\Debug\Performance.g.cs
 C:\Users\Stasia\Desktop\Theater\Theater\obj\Debug\Performance.baml
-C:\Users\Stasia\Desktop\Theater\Theater\obj\Debug\Theater.csprojAssemblyReference.cache
 C:\Users\Stasia\Desktop\Theater\Theater\obj\Debug\Ticket_purchase.g.cs
 C:\Users\Stasia\Desktop\Theater\Theater\obj\Debug\Ticket_purchase1.g.cs
 C:\Users\Stasia\Desktop\Theater\Theater\obj\Debug\Ticket_purchase.baml
@@ -80,3 +79,8 @@ C:\Users\Stasia\Desktop\Theater\Theater\obj\Debug\PurchasedTicket.g.cs
 C:\Users\Stasia\Desktop\Theater\Theater\obj\Debug\PurchasedTickets.g.cs
 C:\Users\Stasia\Desktop\Theater\Theater\obj\Debug\PurchasedTicket.baml
 C:\Users\Stasia\Desktop\Theater\Theater\obj\Debug\PurchasedTickets.baml
+C:\Users\Stasia\Desktop\Theater\Theater\obj\Debug\Scene2.g.cs
+C:\Users\Stasia\Desktop\Theater\Theater\obj\Debug\Scene2.baml
+C:\Users\Stasia\Desktop\Theater\Theater\obj\Debug\Scene3.g.cs
+C:\Users\Stasia\Desktop\Theater\Theater\obj\Debug\Scene3.baml
+C:\Users\Stasia\Desktop\Theater\Theater\obj\Debug\Theater.csprojAssemblyReference.cache

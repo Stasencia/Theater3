@@ -181,7 +181,8 @@ namespace Theater
             var query = db.GetTable<TAfisha_dates>()
                        .Where(l => l.Id_performance == perf_id && l.Date == date)
                        .Select(l => new { l.Date, l.Id }).First();
-            Ticket_purchase t = new Ticket_purchase(this, query.Id);
+            //Ticket_purchase t = new Ticket_purchase(this, query.Id);
+            Ticket_purchase1 t = new Ticket_purchase1(this, query.Id);
             t.Show();
             this.Hide();
         }
