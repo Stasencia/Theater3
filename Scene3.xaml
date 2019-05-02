@@ -9,15 +9,16 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
-        <Style x:Key="Seat" TargetType="Button" BasedOn="{StaticResource MaterialDesignRaisedLightButton}">
+        <Style x:Key="Seat" TargetType="Button" BasedOn="{StaticResource MaterialDesignFloatingActionMiniLightButton}">
+        <!--Style x:Key="Seat" TargetType="Button" BasedOn="{StaticResource MaterialDesignRaisedLightButton}"-->
             <Setter Property="materialDesign:RippleAssist.Feedback" Value="#DD000000"></Setter>
-            <Setter Property="Background" Value="White"></Setter>
+            <Setter Property="Background" Value="Tomato"></Setter>
             <Setter Property="Foreground" Value="White"></Setter>
-            <Setter Property="BorderBrush" Value="Black"></Setter>
+            <Setter Property="BorderBrush" Value="Tomato"></Setter>
             <Setter Property="Height" Value="20"></Setter>
             <Setter Property="Width" Value="20"></Setter>
             <Setter Property="FontFamily" Value="Sugeoe UI"></Setter>
-            <Setter Property="Template">
+            <!--Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
                         <Grid>
@@ -28,7 +29,7 @@
                         </Grid>
                     </ControlTemplate>
                 </Setter.Value>
-            </Setter>
+            </-->
         </Style>
     </UserControl.Resources>
     <Grid>
@@ -564,11 +565,11 @@
 				c0.439-0.452,0.949-0.786,1.529-1.002c0.578-0.214,1.197-0.324,1.848-0.324c1.66,0,2.863,0.44,3.604,1.318
 				c0.732,0.878,1.104,2.056,1.104,3.536c0,0.878-0.094,1.634-0.279,2.271c-0.189,0.634-0.492,1.366-0.928,2.188l-3.527,6.704h4.479
 				v3.64h-8.952v0.002H114.022L114.022,307.932z" Fill="Black"></Path>
-                        <Button Style="{StaticResource Seat}" Margin="147,290,1064,544">1</Button>
-                        <Button Style="{StaticResource Seat}" Margin="145,317,1066,517">2</Button>
-                        <Button Style="{StaticResource Seat}" Margin="143,346,1068,488">3</Button>
-                        <Button Style="{StaticResource Seat}" Margin="117,346,1094,488">4</Button>
-                        <Button Style="{StaticResource Seat}" Margin="118,318,1093,516">5</Button>
+                        <Button Style="{StaticResource Seat}" Margin="148,290,1071,544">1</Button>
+                        <Button Style="{StaticResource Seat}" Margin="145,317,1074,517">2</Button>
+                        <Button Style="{StaticResource Seat}" Margin="142,346,1077,488">3</Button>
+                        <Button Style="{StaticResource Seat}" Margin="116,346,1103,488">4</Button>
+                        <Button Style="{StaticResource Seat}" Margin="116,318,1103,516">5</Button>
                     </Grid>
                     <Grid x:Name="LeftBeljetazhSector3">
                         <Path Data="M113.261,390.82c0.602,0.278,1.014,0.707,1.234,1.287c0.22,0.579,0.336,1.139,0.336,1.681v1.934
@@ -583,20 +584,20 @@
 				c0.578,0.272,1.043,0.622,1.385,1.051c0.344,0.429,0.592,0.914,0.74,1.455c0.146,0.543,0.223,1.074,0.223,1.597v1.145
 				c0,0.355-0.018,0.718-0.043,1.093c-0.025,0.373-0.1,0.731-0.209,1.077c-0.11,0.347-0.271,0.662-0.471,0.952
 				c-0.209,0.292-0.486,0.53-0.844,0.714L113.261,390.82L113.261,390.82z" Fill="Black"></Path>
-                        <Button Style="{StaticResource Seat}" Margin="141,381,1070,453">1</Button>
-                        <Button Style="{StaticResource Seat}" Margin="138,409,1073,425">2</Button>
-                        <Button Style="{StaticResource Seat}" Margin="136,435,1075,399">3</Button>
-                        <Button Style="{StaticResource Seat}" Margin="109,435,1102,399">4</Button>
-                        <Button Style="{StaticResource Seat}" Margin="111,409,1100,425">5</Button>
+                        <Button Style="{StaticResource Seat}" Margin="140,381,1079,453">1</Button>
+                        <Button Style="{StaticResource Seat}" Margin="137,409,1082,425">2</Button>
+                        <Button Style="{StaticResource Seat}" Margin="135,435,1084,399">3</Button>
+                        <Button Style="{StaticResource Seat}" Margin="108,435,1111,399">4</Button>
+                        <Button Style="{StaticResource Seat}" Margin="108,409,1111,425">5</Button>
                     </Grid>
                     <Grid x:Name="LeftBeljetazhSector4">
                         <Path Data="M105.114,490.6v2.746h-3.668v-2.744H95.76v-3.105l4.174-13.637h3.695l-3.949,13.158h1.766v-3.472h3.668
 				v3.472h1.092v3.586L105.114,490.6L105.114,490.6z" Fill="Black"></Path>
-                        <Button Style="{StaticResource Seat}" Margin="133,472,1078,362">1</Button>
-                        <Button Style="{StaticResource Seat}" Margin="130,499,1081,335">2</Button>
-                        <Button Style="{StaticResource Seat}" Margin="127,526,1084,308">3</Button>
-                        <Button Style="{StaticResource Seat}" Margin="99,526,1112,308">4</Button>
-                        <Button Style="{StaticResource Seat}" Margin="102,499,1109,335">5</Button>
+                        <Button Style="{StaticResource Seat}" Margin="132,472,1087,362">1</Button>
+                        <Button Style="{StaticResource Seat}" Margin="129,499,1090,335">2</Button>
+                        <Button Style="{StaticResource Seat}" Margin="125,526,1094,308">3</Button>
+                        <Button Style="{StaticResource Seat}" Margin="100,526,1119,308">4</Button>
+                        <Button Style="{StaticResource Seat}" Margin="101,499,1118,335">5</Button>
                     </Grid>
                     <Grid x:Name="LeftBeljetazhSector5">
                         <Path Data="M96.986,575.607c0,1.697-0.391,3.004-1.189,3.922c-0.791,0.914-2.01,1.371-3.652,1.371
@@ -605,12 +606,12 @@
 				c0.207,0,0.404-0.073,0.604-0.224c0.197-0.149,0.291-0.479,0.291-0.979v-4.172c0-0.521-0.266-0.785-0.789-0.785
 				c-0.146,0-0.344,0.063-0.586,0.186c-0.244,0.121-0.451,0.396-0.619,0.824h-3.111v-10.866H96.7v3.558h-5.18v3.526l0.084,0.025
 				c0.207-0.221,0.494-0.389,0.867-0.504c0.377-0.109,0.693-0.168,0.957-0.168c1.271,0,2.182,0.354,2.729,1.063
-				c0.55,0.709,0.823,1.623,0.823,2.744L96.986,575.607L96.986,575.607z" Fill="Black"></Path>
-                        <Button Style="{StaticResource Seat}" Margin="124,561,1087,273">1</Button>
-                        <Button Style="{StaticResource Seat}" Margin="120,587,1091,247">2</Button>
-                        <Button Style="{StaticResource Seat}" Margin="124,616,1087,218">3</Button>
-                        <Button Style="{StaticResource Seat}" Margin="95,622,1116,212">4</Button>
-                        <Button Style="{StaticResource Seat}" Margin="92,592,1119,242">5</Button>
+				c0.55,0.709,0.823,1.623,0.823,2.744L96.986,575.607L96.986,575.607z" Fill="Black" Margin="-0.336,1.83,0.336,-1.83"/>
+                        <Button Style="{StaticResource Seat}" Margin="124,562,1095,272">1</Button>
+                        <Button Style="{StaticResource Seat}" Margin="121,590,1098,244">2</Button>
+                        <Button Style="{StaticResource Seat}" Margin="123,617,1096,217">3</Button>
+                        <Button Style="{StaticResource Seat}" Margin="94,621,1125,213">4</Button>
+                        <Button Style="{StaticResource Seat}" Margin="91,592,1128,242">5</Button>
                     </Grid>
                     <Grid x:Name="LeftBeljetazhSector6">
                         <Path Data="M118.95,685.908c0.279-0.147,0.625-0.225,1.043-0.225c0.299,0,0.623,0.049,0.957,0.141
