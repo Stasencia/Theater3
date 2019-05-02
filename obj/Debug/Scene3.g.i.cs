@@ -74,14 +74,6 @@ namespace Theater
 #line default
 #line hidden
 
-
-#line 74 "..\..\Scene3.xaml"
-        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Media.TranslateTransform translateTransform;
-
-#line default
-#line hidden
-
         private bool _contentLoaded;
 
         /// <summary>
@@ -175,6 +167,25 @@ namespace Theater
         internal System.Windows.Controls.Grid RightBeljetazhSector8;
         internal System.Windows.Controls.Grid RightBeljetazhSector9;
         internal System.Windows.Controls.Grid RightBeljetazhSector10;
+        internal System.Windows.Controls.Grid Parter;
+        internal System.Windows.Media.TranslateTransform translateTransform;
+        internal System.Windows.Controls.Grid ParterLetters;
+        internal System.Windows.Controls.Grid ParterSeats;
+        internal System.Windows.Controls.Grid LeftRow1;
+        internal System.Windows.Controls.Grid LeftRow2;
+        internal System.Windows.Controls.Grid LeftRow3;
+        internal System.Windows.Controls.Grid LeftRow4;
+        internal System.Windows.Controls.Grid LeftRow5;
+        internal System.Windows.Controls.Grid LeftRow6;
+        internal System.Windows.Controls.Grid LeftRow7;
+        internal System.Windows.Controls.Grid LeftRow8;
+        internal System.Windows.Controls.Grid LeftRow9;
+        internal System.Windows.Controls.Grid LeftRow10;
+        internal System.Windows.Controls.Grid RightRow1;
+        internal System.Windows.Controls.Grid RightRow2;
+        internal System.Windows.Controls.Grid RightRow3;
+        internal System.Windows.Controls.Grid RightRow4;
+        internal System.Windows.Controls.Grid RightRow5;
     }
 }
 
