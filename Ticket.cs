@@ -12,7 +12,7 @@ namespace Theater
 {
     class Ticket
     {
-        public static int Ticket_purchase(List<Button> buttons, int perf_info_id, double price, Ticket_purchase form)
+        public static int Ticket_purchase(List<Button> buttons, int perf_info_id, decimal price, Ticket_purchase form)
         {
             var chosenbuttons = buttons.Where(k => k.Background != Brushes.WhiteSmoke).ToList();
             TTickets ticket;

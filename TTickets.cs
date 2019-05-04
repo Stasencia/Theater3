@@ -17,7 +17,7 @@ namespace Theater
         [Column]
         public int Performance_info_id { get; set; }
         [Column]
-        public double Price { get; set; }
+        public decimal Price { get; set; }
         [Column]
         public string HallPart { get; set; }
         [Column]

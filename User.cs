@@ -13,7 +13,7 @@ namespace Theater
     class User
     {
         public static User CurrentUser = new User();
-        public int ID { get; private set; } = 0;
+        public int ID { get; private set; } = 1;
         public int Right { get; private set; } = 0;
         private User()
         {

@@ -118,6 +118,7 @@
     <Compile Include="Scene3.xaml.cs">
       <DependentUpon>Scene3.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SeatClickedEventArgs.cs" />
     <Compile Include="TAfisha.cs" />
     <Compile Include="TAfisha_dates.cs" />
     <Compile Include="TAfisha_SeatsPrices.cs" />

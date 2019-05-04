@@ -23,8 +23,8 @@ namespace Theater
     {
         int perf_info_id;
         Performance perf;
-        double initial_price;
-        double price;
+        decimal initial_price;
+        decimal price;
         DataContext db = new DataContext(DB_connection.connectionString);
         public Ticket_purchase(Performance perf, int info)
         {
@@ -51,7 +51,7 @@ namespace Theater
                 else
                     price += initial_price - 50;
                 if (Discount.IsChecked == true)
-                    price = price * (float)0.75;
+                    price = price * 0.75m;
             }
             PriceLabel.Content = "Цена: " + price + " грн.";
             if (price == 0)

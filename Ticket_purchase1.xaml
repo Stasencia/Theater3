@@ -30,7 +30,7 @@
         </Style>
 
     </Window.Resources>
-    <Grid>
+    <Grid x:Name="MainGrid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="*"/>
@@ -40,16 +40,15 @@
             <RowDefinition Height="15*"/>
             <RowDefinition Height="55*"/>
         </Grid.RowDefinitions>
-        <local:Scene3 x:Name="Scene">
-        </local:Scene3>
-        <Border Grid.Row="2" Panel.ZIndex="1" Background="White" Grid.RowSpan="2"></Border>
+        <Border Grid.Row="1" Panel.ZIndex="1" Background="White" Grid.RowSpan="2"></Border>
         <Slider Grid.Row="1" Panel.ZIndex="1" x:Name="ZoomSlider" Minimum="1" Maximum="5" Width="300" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <StackPanel Grid.Row="2" Panel.ZIndex="1" HorizontalAlignment="Center">
-            <Label VerticalAlignment="Center" FontSize="15">Цена: 0 грн.</Label>
-            <Label VerticalAlignment="Center" FontSize="15">Скидка: 5%</Label>
-            <Label VerticalAlignment="Center" FontSize="17" FontWeight="Black">Всего: 0 грн.</Label>
-            <Button HorizontalAlignment="Center" FontSize="16">Купить билеты</Button>
+            <Label x:Name="InitialPrice" VerticalAlignment="Center" FontSize="15">Цена: 0.00 грн.</Label>
+            <Label x:Name="Discount" VerticalAlignment="Center" FontSize="15">Скидка: 0%</Label>
+            <Label x:Name="OverallPrice" VerticalAlignment="Center" FontSize="17" FontWeight="Black">Всего: 0.00 грн.</Label>
+            <Button x:Name="PurchaseBtn" HorizontalAlignment="Center" FontSize="16" Click="PurchaseBtn_Click">Купить билеты</Button>
         </StackPanel>
+        <Border Panel.ZIndex="1" Background="White" Grid.Column="1" Grid.RowSpan="3"></Border>
         <Grid Grid.Column="1" x:Name="InfoGrid"  Panel.ZIndex="1" Grid.RowSpan="3" VerticalAlignment="Center">
             <Grid.RowDefinitions>
                 <RowDefinition Height="15*"/>
@@ -61,7 +60,6 @@
                    
                 </StackPanel>
             </-->
-            <Border Panel.ZIndex="1" Background="White" Grid.RowSpan="3"></Border>
             <Label x:Name="AfishaLabel" Panel.ZIndex="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Black" FontSize="22">Реверс</Label>
             <Image Margin="10" Panel.ZIndex="1" x:Name="AfishaImg" Grid.Row="1" Source="Resources\pass-afisha.jpg"></Image>
             <StackPanel Panel.ZIndex="1" VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="2">

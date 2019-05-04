@@ -23,14 +23,28 @@ namespace Theater
     {
         int perf_info_id;
         Performance perf;
+        Scene3 scene;
+        decimal discount;
         DataContext db = new DataContext(DB_connection.connectionString);
+        decimal initialprice = 0;
         public Ticket_purchase1(Performance perf, int info)
         {
             InitializeComponent();
             perf_info_id = info;
             this.perf = perf;
+            scene = new Scene3(info);
+            scene.Name = "Scene";
+            MainGrid.Children.Add(scene);
             Ticket_purchase_Load();
+            scene.SeatClicked += Scene_SeatClicked;
+            CalculateDiscount();
         }
+
+        private void CalculateDiscount()
+        {
+            discount = db.GetTable<TTickets>().Where(k => k.User_Id == User.CurrentUser.ID).Sum(k => k.Price) / 200;
+            Discount.Content = $"Скидка: {discount}%";
+        }     
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
@@ -44,7 +58,7 @@ namespace Theater
                         .Join(db.GetTable<TAfisha>(),
                             a => a.Id_performance,
                             b => b.Id,
-                            (a, b) => new { a.Date, b.Duration, b.Image, b.Id, b.Price, b.Name }).First();
+                            (a, b) => new { a.Date, b.Duration, b.Image, b.Id, b.Name }).First();
             AfishaLabel.Content = query1.Name;
             AfishaDate.Content = query1.Date.ToShortDateString() + " " + query1.Date.ToShortTimeString();
             string s = DB_connection.current_directory + "images_afisha\\" + query1.Image;
@@ -59,10 +73,22 @@ namespace Theater
             foreach (var q in query)
             {
                 gridname = $"{(q.Left ==true?"Left":"Right")}_{q.HallPart}_{q.Sector}";
-                g = Scene.FindName(gridname) as Grid;
+                g = scene.FindName(gridname) as Grid;
                 seat = g.Children.OfType<Button>().Where(k => k.Content.ToString() == q.Seat.ToString()).First();
                 seat.IsEnabled = false;
             }
+        }
+
+        private void Scene_SeatClicked(object sender, SeatClickedEventArgs e)
+        {
+            initialprice += e.Price;
+            InitialPrice.Content = $"Цена: {initialprice} грн.";
+            OverallPrice.Content = $"Всего: {initialprice * (100 - discount) / 100:f2} грн.";
+        }
+
+        private void PurchaseBtn_Click(object sender, RoutedEventArgs e)
+        {
+            scene.GetSelectedSeats();
         }
     }
 }
