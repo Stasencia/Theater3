@@ -120,6 +120,7 @@
     </Compile>
     <Compile Include="TAfisha.cs" />
     <Compile Include="TAfisha_dates.cs" />
+    <Compile Include="TAfisha_SeatsPrices.cs" />
     <Compile Include="Ticket.cs" />
     <Compile Include="TicketSellInfo.cs" />
     <Compile Include="Ticket_purchase.xaml.cs">

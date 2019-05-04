@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Linq;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,6 +30,18 @@ namespace Theater
         {
             translateTransform.X += e.HorizontalChange;
             translateTransform.Y += e.VerticalChange;
+        }
+
+        private void SeatBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Button b = sender as Button;
+            string[] s = (b.Parent as Grid).Name.Split('_');
+            bool left = true;
+            if (s[0] == "Right")
+                left = false;
+            string hallpart = s[1];
+            int sector = int.Parse(s[3]);
+            int seat = Convert.ToInt32(b.Content);
         }
     }
 }

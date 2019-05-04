@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Theater"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="Ticket_purchase1" Height="500" Width="800" FontFamily="Century Gothic" Closing="Window_Closing">
+        Title="Ticket_purchase1" Height="600" Width="800" FontFamily="Century Gothic" Closing="Window_Closing">
     <Window.Resources>
         <Style x:Key="Seat" TargetType="Button" BasedOn="{StaticResource MaterialDesignRaisedLightButton}">
             <Setter Property="Background" Value="White"></Setter>
@@ -36,37 +36,37 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="170*"/>
+            <RowDefinition Height="15*"/>
             <RowDefinition Height="55*"/>
-            <RowDefinition Height="391*"/>
-            <RowDefinition Height="24*"/>
         </Grid.RowDefinitions>
-        <Border Panel.ZIndex="1" Background="White" ></Border>
-        <Label Panel.ZIndex="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Black" FontSize="22" Margin="218,9">Реверс</Label>
-        <Border Panel.ZIndex="1" Background="White" Grid.Column="1"></Border>
-        <StackPanel Panel.ZIndex="1" Grid.Column="1" VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Center" Margin="57,12,57,13">
-            <materialDesign:PackIcon  HorizontalAlignment="Center" VerticalAlignment="Center" Kind="DateRange"></materialDesign:PackIcon>
-            <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16">20.05.2019 19:00</Label>
-        </StackPanel>
-        <local:Scene3 Grid.Row="1">
+        <local:Scene3 x:Name="Scene">
         </local:Scene3>
         <Border Grid.Row="2" Panel.ZIndex="1" Background="White" Grid.RowSpan="2"></Border>
-        <Slider Grid.Row="2" Panel.ZIndex="1" x:Name="ZoomSlider" Minimum="1" Maximum="5" Width="300" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Border Grid.Column="1" Grid.Row="1" Panel.ZIndex="1" Background="White" Grid.RowSpan="2"></Border>
-        <Grid Grid.Column="1" Grid.Row="1" x:Name="InfoGrid"  Panel.ZIndex="1" Grid.RowSpan="2">
+        <Slider Grid.Row="1" Panel.ZIndex="1" x:Name="ZoomSlider" Minimum="1" Maximum="5" Width="300" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <StackPanel Grid.Row="2" Panel.ZIndex="1" HorizontalAlignment="Center">
+            <Label VerticalAlignment="Center" FontSize="15">Цена: 0 грн.</Label>
+            <Label VerticalAlignment="Center" FontSize="15">Скидка: 5%</Label>
+            <Label VerticalAlignment="Center" FontSize="17" FontWeight="Black">Всего: 0 грн.</Label>
+            <Button HorizontalAlignment="Center" FontSize="16">Купить билеты</Button>
+        </StackPanel>
+        <Grid Grid.Column="1" x:Name="InfoGrid"  Panel.ZIndex="1" Grid.RowSpan="3" VerticalAlignment="Center">
             <Grid.RowDefinitions>
+                <RowDefinition Height="15*"/>
                 <RowDefinition Height="61*"/>
-                <RowDefinition Height="29*"/>
+                <RowDefinition Height="15*"/>
             </Grid.RowDefinitions>
-            <ScrollViewer>
+            <!--ScrollViewer>
                 <StackPanel>
                    
                 </StackPanel>
-            </ScrollViewer>
-            <StackPanel Grid.Row="1">
-                <Label VerticalAlignment="Center" FontSize="15">Цена: 0 грн.</Label>
-                <Label Grid.Row="2" VerticalAlignment="Center" FontSize="15">Скидка: 5%</Label>
-                <Label Grid.Row="3" VerticalAlignment="Center" FontSize="17" FontWeight="Black">Всего: 0 грн.</Label>
-                <Button Grid.Row="4" HorizontalAlignment="Center" FontSize="16">Купить билеты</Button>
+            </-->
+            <Border Panel.ZIndex="1" Background="White" Grid.RowSpan="3"></Border>
+            <Label x:Name="AfishaLabel" Panel.ZIndex="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Black" FontSize="22">Реверс</Label>
+            <Image Margin="10" Panel.ZIndex="1" x:Name="AfishaImg" Grid.Row="1" Source="Resources\pass-afisha.jpg"></Image>
+            <StackPanel Panel.ZIndex="1" VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="2">
+                <materialDesign:PackIcon  HorizontalAlignment="Center" VerticalAlignment="Center" Kind="DateRange"></materialDesign:PackIcon>
+                <Label x:Name="AfishaDate" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16">20.05.2019 19:00</Label>
             </StackPanel>
         </Grid>
     </Grid>

@@ -17,8 +17,15 @@ namespace Theater
         [Column]
         public int Performance_info_id { get; set; }
         [Column]
-        public int Seat { get; set; }
-        [Column]
         public double Price { get; set; }
+        [Column]
+        public string HallPart { get; set; }
+        [Column]
+        public bool Left { get; set; }
+        [Column]
+        public int Sector { get; set; }
+        [Column]
+        public int Seat { get; set; }
+
     }
 }
