@@ -12,7 +12,7 @@ namespace Theater
 {
     class Ticket
     {
-        public static int Ticket_purchase(List<Button> buttons, int perf_info_id, decimal price, Ticket_purchase form)
+        public static int Ticket_purchase1(List<Button> buttons, int perf_info_id, decimal price, Ticket_purchase form)
         {
             var chosenbuttons = buttons.Where(k => k.Background != Brushes.WhiteSmoke).ToList();
             TTickets ticket;
@@ -23,6 +23,47 @@ namespace Theater
                 db.GetTable<TTickets>().InsertOnSubmit(ticket);
                 b.Background = Brushes.Gray;
                 b.IsEnabled = false;
+            }
+            try
+            {
+                db.SubmitChanges();
+            }
+            catch (Exception)
+            {
+                return 1;
+            }
+            return 0;
+        }
+
+        public static TTickets GetTicketInfo(Button b, int perf_info_id)
+        {
+            DataContext db = new DataContext(DB_connection.connectionString);
+            int id_perf = db.GetTable<TAfisha_dates>().Where(k => k.Id == perf_info_id).Select(k => k.Id_performance).First();
+            TAfisha_SeatsPrices afisha_SeatsPrices = db.GetTable<TAfisha_SeatsPrices>().Where(k => k.Performance_Id == id_perf).First();
+            string[] s = (b.Parent as Grid).Name.Split('_');
+            bool left = true;
+            if (s[0] == "Right")
+                left = false;
+            string hallpart = s[1];
+            int sector = int.Parse(s[2]);
+            int seat = Convert.ToInt32(b.Content);
+            decimal price;
+            if (hallpart == "Beljetazh")
+                price = afisha_SeatsPrices.BeljetazhPrice;
+            else if (hallpart == "Benuar")
+                price = afisha_SeatsPrices.BenuarPrice;
+            else
+                price = afisha_SeatsPrices.ParterPrice;
+            TTickets t = new TTickets() { User_Id = User.CurrentUser.ID, Performance_info_id = perf_info_id, Price = price, HallPart = hallpart, Left = left, Sector = sector, Seat = seat };
+            return t;
+        }
+
+        public static int Ticket_purchase(List<TTickets> tickets)
+        {
+            DataContext db = new DataContext(DB_connection.connectionString);
+            foreach (TTickets ticket in tickets)
+            {
+                db.GetTable<TTickets>().InsertOnSubmit(ticket);
             }
             try
             {

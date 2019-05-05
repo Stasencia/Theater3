@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Theater
 {
     [Table(Name = "Tickets")]
-    class TTickets
+    public class TTickets
     {
         [Column(IsPrimaryKey = true, IsDbGenerated = true)]
         public int Id { get; set; }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialDesignThemes.Wpf;
+using System;
 using System.Collections.Generic;
 using System.Data.Linq;
 using System.Linq;
@@ -42,7 +43,13 @@ namespace Theater
 
         private void CalculateDiscount()
         {
-            discount = db.GetTable<TTickets>().Where(k => k.User_Id == User.CurrentUser.ID).Sum(k => k.Price) / 200;
+            var x = db.GetTable<TTickets>().Where(k => k.User_Id == User.CurrentUser.ID);
+            if (x.Any())
+            {
+                discount = x.Sum(k => k.Price) / 200;
+                if (discount > 50)
+                    discount = 50;
+            }      
             Discount.Content = $"Скидка: {discount}%";
         }     
 
@@ -79,6 +86,13 @@ namespace Theater
             }
         }
 
+        private void CalculatePrices()
+        {
+            InitialPrice.Content = $"Цена: {initialprice} грн.";
+            OverallPrice.Content = $"Всего: {initialprice * (100 - discount) / 100:f2} грн.";
+            CalculateDiscount();
+        }
+
         private void Scene_SeatClicked(object sender, SeatClickedEventArgs e)
         {
             initialprice += e.Price;
@@ -86,9 +100,31 @@ namespace Theater
             OverallPrice.Content = $"Всего: {initialprice * (100 - discount) / 100:f2} грн.";
         }
 
-        private void PurchaseBtn_Click(object sender, RoutedEventArgs e)
+        private async void PurchaseBtn_Click(object sender, RoutedEventArgs e)
         {
-            scene.GetSelectedSeats();
+            List<Button> seats = scene.GetSeats();
+            List<TTickets> tickets = new List<TTickets>();
+            TextBox dialogContent = new TextBox();
+            foreach (Button seat in seats)
+            {
+                seat.IsEnabled = false;
+                tickets.Add(Ticket.GetTicketInfo(seat, perf_info_id));
+            }
+            if (Ticket.Ticket_purchase(tickets) == 0)
+            {
+                dialogContent.Text = "Билеты были успешно заказаны!" + Environment.NewLine + "Благодарим за покупку.";
+                initialprice = 0;
+                CalculatePrices();
+                //PurchaseBtn.IsEnabled = false;
+            }
+            else
+                dialogContent.Text = "При сохранении данных произошла ошибка." + Environment.NewLine + "Попробуйте пожалуйста позже.";
+            await this.ShowDialog(dialogContent);
+        }
+
+        private void DialogClose(object sender, RoutedEventArgs e)
+        {
+            MaterialDesignThemes.Wpf.DialogHost.CloseDialogCommand.Execute(null, null);
         }
     }
 }

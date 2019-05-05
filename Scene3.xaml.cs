@@ -22,14 +22,13 @@ namespace Theater
     /// </summary>
     public partial class Scene3 : UserControl
     {
+        int perf_info_id;
         List<Button> seats = new List<Button>();
         DataContext db = new DataContext(DB_connection.connectionString);
-        TAfisha_SeatsPrices afisha_SeatsPrices;
         public Scene3(int perf_info_id)
         {
             InitializeComponent();
-            int id_perf = db.GetTable<TAfisha_dates>().Where(k => k.Id == perf_info_id).Select(k => k.Id_performance).First();
-            afisha_SeatsPrices = db.GetTable<TAfisha_SeatsPrices>().Where(k => k.Performance_Id == id_perf).First();
+            this.perf_info_id = perf_info_id;
         }
         private void MyRootDragDelta(object sender, DragDeltaEventArgs e)
         {
@@ -37,7 +36,7 @@ namespace Theater
             translateTransform.Y += e.VerticalChange;
         }
 
-        public List<Button> GetSelectedSeats()
+        public List<Button> GetSeats()
         {
             return seats;
         }
@@ -45,30 +44,17 @@ namespace Theater
         private void SeatBtn_Click(object sender, RoutedEventArgs e)
         {
             Button b = sender as Button;
-            string[] s = (b.Parent as Grid).Name.Split('_');
-            bool left = true;
-            if (s[0] == "Right")
-                left = false;
-            string hallpart = s[1];
-            int sector = int.Parse(s[2]);
-            int seat = Convert.ToInt32(b.Content);
-            decimal price;
-            if (hallpart == "Beljetazh")
-                price = afisha_SeatsPrices.BeljetazhPrice;
-            else if (hallpart == "Benuar")
-                price = afisha_SeatsPrices.BenuarPrice;
-            else
-                price = afisha_SeatsPrices.ParterPrice;
+            TTickets t = Ticket.GetTicketInfo(b, perf_info_id);
             if (b.Background == Brushes.Tomato)
             {
                 b.Background = Brushes.DarkRed;
-                OnSeatClicked(new SeatClickedEventArgs(price));
+                OnSeatClicked(new SeatClickedEventArgs(t.Price));
                 seats.Add(b);
             }
             else
             {
                 b.Background = Brushes.Tomato;
-                OnSeatClicked(new SeatClickedEventArgs(-price));
+                OnSeatClicked(new SeatClickedEventArgs(-t.Price));
                 seats.Remove(b);
             }
         }

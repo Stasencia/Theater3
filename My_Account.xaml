@@ -140,42 +140,58 @@
             </DrawingImage.Drawing>
         </DrawingImage>
     </Window.Resources>
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="241*" MaxWidth="241"/>
-            <ColumnDefinition Width="551*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="31*" MaxHeight="70"/>
-            <RowDefinition Height="179*"/>
-        </Grid.RowDefinitions>
-        <Border Grid.Column="1" Background="#FF00BCD4"></Border>
-        <Border Background="#FF07808F"></Border>
-        <Border Grid.Row="1" Background="#FF00BCD4"></Border>
-        <Label Grid.Column="1" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontWeight="Bold">Личный кабинет пользователя</Label>
-        <Button x:Name="HomePageBtn" Click="HomePageBtn_Click" Height="Auto" Background="{x:Null}" HorizontalContentAlignment="Left" HorizontalAlignment="Left" BorderBrush="{x:Null}" materialDesign:ShadowAssist.ShadowDepth="Depth0">
-            <DockPanel HorizontalAlignment="Left">
-                <Image DockPanel.Dock="Left" Source="{StaticResource curtains}" Margin="5"></Image>
-                <Label VerticalAlignment="Center">
-                    <TextBlock FontSize="14" Foreground="White">Театр имени<LineBreak/>Ольги Кобылянской</TextBlock>
-                </Label>
-            </DockPanel>
-        </Button>
-        <StackPanel Grid.Row="1" VerticalAlignment="Center">
-            <Button x:Name="PurchasedTicketsBtn" Click="PurchasedTicketsBtn_Click" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Height="Auto" BorderBrush="#FF07808F">
-                <StackPanel Orientation="Horizontal">
-                    <materialDesign:PackIcon Kind="Ticket" VerticalAlignment="Center"></materialDesign:PackIcon>
-                    <Label DockPanel.Dock="Left" Foreground="White">Купленные билеты</Label>
-                </StackPanel>
+    <materialDesign:DialogHost>
+        <materialDesign:DialogHost.DialogContentTemplate>
+            <DataTemplate DataType="local: TextBlock">
+                <Grid Width="{Binding ActualWidth, ElementName=MainGrid}">
+                    <Grid Margin="20">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <TextBlock TextWrapping="Wrap" Text="{Binding Text}" Grid.Row="0" Margin="0,0,0,10"/>
+                        <Button Grid.Row="1" Click="DialogClose">Закрыть</Button>
+                    </Grid>
+                </Grid>
+            </DataTemplate>
+        </materialDesign:DialogHost.DialogContentTemplate>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="241*" MaxWidth="241"/>
+                <ColumnDefinition Width="551*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="31*" MaxHeight="70"/>
+                <RowDefinition Height="179*"/>
+            </Grid.RowDefinitions>
+            <Border Grid.Column="1" Background="#FF00BCD4"></Border>
+            <Border Background="#FF07808F"></Border>
+            <Border Grid.Row="1" Background="#FF00BCD4"></Border>
+            <Label Grid.Column="1" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontWeight="Bold">Личный кабинет пользователя</Label>
+            <Button x:Name="HomePageBtn" Click="HomePageBtn_Click" Height="Auto" Background="{x:Null}" HorizontalContentAlignment="Left" HorizontalAlignment="Left" BorderBrush="{x:Null}" materialDesign:ShadowAssist.ShadowDepth="Depth0">
+                <DockPanel HorizontalAlignment="Left">
+                    <Image DockPanel.Dock="Left" Source="{StaticResource curtains}" Margin="5"></Image>
+                    <Label VerticalAlignment="Center">
+                        <TextBlock FontSize="14" Foreground="White">Театр имени<LineBreak/>Ольги Кобылянской</TextBlock>
+                    </Label>
+                </DockPanel>
             </Button>
-            <Button x:Name="PersonalInfoBtn" Click="PersonalInfoBtn_Click" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Height="Auto" BorderBrush="#FF07808F">
-                <StackPanel Orientation="Horizontal">
-                    <materialDesign:PackIcon Kind="Person" VerticalAlignment="Center" Height="{Binding ElementName=PerdonalInfoBtn, Path=Height}"></materialDesign:PackIcon>
-                    <Label Foreground="White">Персональная информация</Label>
-                </StackPanel>
-            </Button>
-        </StackPanel>
-        <Grid x:Name="ContentGrid" Grid.Column="1" Grid.Row="1">
+            <StackPanel Grid.Row="1" VerticalAlignment="Center">
+                <Button x:Name="PurchasedTicketsBtn" Click="PurchasedTicketsBtn_Click" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Height="Auto" BorderBrush="#FF07808F">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="Ticket" VerticalAlignment="Center"></materialDesign:PackIcon>
+                        <Label DockPanel.Dock="Left" Foreground="White">Купленные билеты</Label>
+                    </StackPanel>
+                </Button>
+                <Button x:Name="PersonalInfoBtn" Click="PersonalInfoBtn_Click" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Height="Auto" BorderBrush="#FF07808F">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="Person" VerticalAlignment="Center" Height="{Binding ElementName=PerdonalInfoBtn, Path=Height}"></materialDesign:PackIcon>
+                        <Label Foreground="White">Персональная информация</Label>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+            <Grid x:Name="ContentGrid" Grid.Column="1" Grid.Row="1">
+            </Grid>
         </Grid>
-    </Grid>
+    </materialDesign:DialogHost>
 </Window>
