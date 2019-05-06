@@ -5,51 +5,36 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Theater"
              mc:Ignorable="d" 
-             d:DesignHeight="350" d:DesignWidth="500" FontFamily="Century Gothic">
+             d:DesignHeight="400" d:DesignWidth="500" FontFamily="Century Gothic">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="96*"/>
-            <RowDefinition Height="55*"/>
-            <RowDefinition Height="148*"/>
-            <RowDefinition Height="151*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="213*"/>
         </Grid.RowDefinitions>
-        <Label Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="20">Персональные данные</Label>
-        <Grid Grid.Row="2">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="50*"/>
-                <ColumnDefinition Width="224*"/>
-                <ColumnDefinition Width="50*"/>
-            </Grid.ColumnDefinitions>
-            <Grid Grid.Column="1">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16">Логин</Label>
-                    <TextBlock Grid.Column="1" x:Name="InitLogin" VerticalAlignment="Center" FontSize="16"></TextBlock>
-                    <TextBox Grid.Column="1" x:Name="NLogin" VerticalAlignment="Center" Visibility="Collapsed" FontSize="16"></TextBox>
-                    <Button  Grid.Column="2" x:Name="LoginChange" Click="LoginChange_Click" HorizontalAlignment="Center">Изменить</Button>
-                </Grid>
-            </Grid>
-            <Grid Grid.Column="1" Grid.Row="1">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16">Пароль</Label>
-                    <TextBlock Grid.Column="1" x:Name="InitPassword" VerticalAlignment="Center" FontSize="16"></TextBlock>
-                    <TextBox Grid.Column="1" x:Name="NPassword" VerticalAlignment="Center" Visibility="Collapsed"  FontSize="16"></TextBox>
-                    <Button  Grid.Column="2" x:Name="PasswordChange" Click="PasswordChange_Click" HorizontalAlignment="Center">Изменить</Button>
-                </Grid>
-            </Grid>
-        </Grid>
+        <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" Grid.ColumnSpan="3">Изменение персональных данных</Label>
+        <Border BorderBrush="Gray" BorderThickness="0 0 0 1" Grid.ColumnSpan="3"></Border>
+        <DockPanel Grid.Row="1" HorizontalAlignment="Left" Margin="20,0,0,0">
+            <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" DockPanel.Dock="Top">Новый логин:</Label>
+            <TextBlock Grid.Row="1" Grid.Column="1" x:Name="InitLogin" VerticalAlignment="Center" FontSize="16"  DockPanel.Dock="Top"></TextBlock>
+            <TextBox Grid.Row="1" Grid.Column="1" x:Name="NLogin" VerticalAlignment="Center" Visibility="Collapsed" FontSize="16"  DockPanel.Dock="Top"></TextBox>
+            <Button Grid.Row="1" Grid.Column="2" x:Name="LoginChange" Click="LoginChange_Click" HorizontalAlignment="Center"  DockPanel.Dock="Top">Изменить</Button>
+        </DockPanel>
+        <Border BorderBrush="Gray" BorderThickness="0 0 0 1" Grid.Row="1"></Border>
+        <DockPanel Grid.Row="2">
+            <DockPanel Grid.Row="2" HorizontalAlignment="Left" Margin="20,0,0,0" DockPanel.Dock="Top">
+                <Label VerticalAlignment="Center" FontSize="14"  DockPanel.Dock="Top">Старый пароль</Label>
+                <PasswordBox Grid.Row="2" Grid.Column="1" x:Name="CurrentPassword" VerticalAlignment="Center" FontSize="14"  DockPanel.Dock="Top" Width="{Binding ElementName=ConfirmPassword, Path=ActualWidth}"></PasswordBox>
+            </DockPanel>
+            <DockPanel Grid.Row="3" HorizontalAlignment="Left" Margin="20,0,0,0"  DockPanel.Dock="Top">
+                <Label VerticalAlignment="Center" FontSize="14"  DockPanel.Dock="Top">Новый пароль</Label>
+                <PasswordBox Grid.Row="2" Grid.Column="1" x:Name="NewPassword" VerticalAlignment="Center" FontSize="14"  DockPanel.Dock="Top" Width="{Binding ElementName=ConfirmPassword, Path=ActualWidth}"></PasswordBox>
+            </DockPanel>
+            <DockPanel Grid.Row="4" HorizontalAlignment="Left" Margin="20,0,0,0"  DockPanel.Dock="Top">
+                <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" DockPanel.Dock="Top">Подтвердите новый пароль</Label>
+                <PasswordBox Grid.Row="4" Grid.Column="1" x:Name="ConfirmPassword" VerticalAlignment="Center" FontSize="14" DockPanel.Dock="Top"></PasswordBox>
+            </DockPanel>
+            <Button Margin="20,0,0,0" Grid.Column="2" x:Name="PasswordChange" Click="PasswordChange_Click" HorizontalAlignment="Left" FontSize="14"  DockPanel.Dock="Top">Изменить</Button>
+        </DockPanel>
     </Grid>
 </UserControl>

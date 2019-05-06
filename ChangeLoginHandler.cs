@@ -10,7 +10,7 @@ using System.Windows.Controls;
 
 namespace Theater
 {
-    class ChangeLoginHandler : InfoChangeHandler
+    class ChangeLoginHandler : LoginChangeHandler
     {
         DataContext db = new DataContext(DB_connection.connectionString);
         public override void Handle(LoginChangeReciever reciever)

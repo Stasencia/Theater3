@@ -97,7 +97,7 @@ namespace Theater
         public static void Login_change(string new_login, string initial_login, My_Account account)
         {
             LoginChangeReciever info = new LoginChangeReciever(new_login, initial_login, account);
-            StringsFilledHandler stringsFilledHandler = new StringsFilledHandler();
+            LoginStringsFilledHandler stringsFilledHandler = new LoginStringsFilledHandler();
             NoChangesHandler noChangesHandler = new NoChangesHandler();
             LoginExistsHandler loginExistsHandler = new LoginExistsHandler();
             ChangeLoginHandler changeLoginHandler = new ChangeLoginHandler();
@@ -107,30 +107,18 @@ namespace Theater
             stringsFilledHandler.Handle(info);
         }
 
-         /*public static void Password_change(string new_password, string initial_password, My_Account account)
+         public static void Password_change(string new_password, string current_password, string confirmationpassword, My_Account account)
          {
-             if (!string.IsNullOrWhiteSpace(new_password) && !string.IsNullOrEmpty(new_password))
-             {
-                 if (new_password != initial_password)
-                 {
-                     DataContext db = new DataContext(DB_connection.connectionString);
-                     TUsers user = db.GetTable<TUsers>().Where(k => k.Id == Program.user.ID).First();
-                     user.Password = new_password;
-                     try
-                     {
-                         db.SubmitChanges();
-                     }
-                     catch (Exception e)
-                     {
-                         MetroMessageBox.Show(account, e.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error, 100);
-                     }
-                     MetroMessageBox.Show(account, "Изменения были успешно внесены", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, 120);
-                 }
-             }
-             else
-                 MetroMessageBox.Show(account, "Неправильно введено значение пароля", "", MessageBoxButtons.OK, MessageBoxIcon.Error, 120);
-             account.Fields_fill();
-         }*/
+            PasswordChangeReciever info = new PasswordChangeReciever(new_password, current_password, confirmationpassword, account);
+            PasswordStringsFilledHandler stringsFilledHandler = new PasswordStringsFilledHandler();
+            PasswordValidationHandler validationHandler = new PasswordValidationHandler();
+            PasswordConfirmationHandler confirmationHandler = new PasswordConfirmationHandler();
+            ChangePasswordHandler passwordHandler = new ChangePasswordHandler();
+            stringsFilledHandler.Successor = validationHandler;
+            validationHandler.Successor = confirmationHandler;
+            confirmationHandler.Successor = passwordHandler;
+            stringsFilledHandler.Handle(info);
+         }
 
         private static async void ShowDial(Window sender, TextBlock dialogContent)
         {

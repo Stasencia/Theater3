@@ -33,7 +33,6 @@ namespace Theater
             InitializeComponent();
             account = acc;
             RenewLoginData();
-            RenewPasswordData();
         }
 
         private void RenewLoginData()
@@ -43,15 +42,6 @@ namespace Theater
             Initial_Login = user.Login;
             InitLogin.Text = Initial_Login;
             NLogin.Text = Initial_Login;
-        }
-
-        private void RenewPasswordData()
-        {
-            DataContext db = new DataContext(DB_connection.connectionString);
-            user = db.GetTable<TUsers>().Where(k => k.Id == User.CurrentUser.ID).First();
-            Initial_Password = user.Password;
-            InitPassword.Text = Initial_Password;
-            NPassword.Text = Initial_Password;
         }
 
         private void LoginChange_Click(object sender, RoutedEventArgs e)
@@ -75,21 +65,7 @@ namespace Theater
 
         private void PasswordChange_Click(object sender, RoutedEventArgs e)
         {
-            if (PasswordChange.Content.ToString() == "Изменить")
-            {
-                NPassword.Visibility = Visibility.Visible;
-                InitPassword.Visibility = Visibility.Collapsed;
-                PasswordChange.Content = "Подтвердить";
-            }
-            else
-            {
-                New_Password = NPassword.Text;
-                // User.Password_change(New_Password, Initial_Password, account);
-                NPassword.Visibility = Visibility.Collapsed;
-                InitPassword.Visibility = Visibility.Visible;
-                PasswordChange.Content = "Изменить";
-                RenewPasswordData();
-            }
+            User.Password_change(NewPassword.Password, CurrentPassword.Password, ConfirmPassword.Password, account);
         }
     }
 }

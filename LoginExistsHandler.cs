@@ -10,7 +10,7 @@ using System.Windows.Controls;
 
 namespace Theater
 {
-    class LoginExistsHandler : InfoChangeHandler
+    class LoginExistsHandler : LoginChangeHandler
     {
         public override void Handle(LoginChangeReciever reciever)
         {

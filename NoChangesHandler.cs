@@ -7,7 +7,7 @@ using System.Windows.Controls;
 
 namespace Theater
 {
-    class NoChangesHandler : InfoChangeHandler
+    class NoChangesHandler : LoginChangeHandler
     {
         public override void Handle(LoginChangeReciever reciever)
         {

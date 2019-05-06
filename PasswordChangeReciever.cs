@@ -9,12 +9,14 @@ namespace Theater
     class PasswordChangeReciever
     {
         public string NewPassword { get; set; }
-        public string InitialPassword { get; set; }
+        public string CurrentPassword { get; set; }
+        public string ConfimationPassword { get; set; }
         public My_Account Account { get; set; }
-        public PasswordChangeReciever(string newp, string initp, My_Account acc)
+        public PasswordChangeReciever(string newp, string curp, string confirmp, My_Account acc)
         {
             NewPassword = newp;
-            InitialPassword = initp;
+            CurrentPassword = curp;
+            ConfimationPassword = confirmp;
             Account = acc;
         }
     }
