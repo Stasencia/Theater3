@@ -76,7 +76,7 @@ namespace Theater
             return 0;
         }
 
-        public static IQueryable<TicketSellInfo> Find_tickets()
+        /*public static IQueryable<TicketSellInfo> Find_tickets()
         {
             DataContext db = new DataContext(DB_connection.connectionString);
 
@@ -95,12 +95,30 @@ namespace Theater
                   .Select(x => new TicketSellInfo { Name = x.Key.Name, Date = x.Key.Date, Small_image = x.Key.Small_image, Cancelled = x.Key.Cancelled, Count = x.Select(d => d.Seat).Count(), Seats = x.Select(d => d.Seat) });
 
             return ticket_Sell_Infos;
+        }*/
+
+        public static IQueryable<TicketSellInfo> FindTickets1()
+        {
+            DataContext db = new DataContext(DB_connection.connectionString);
+            IQueryable<TicketSellInfo> q = db.GetTable<TTickets>().Where(k => k.User_Id == User.CurrentUser.ID)
+                                            .GroupBy(x => x.Performance_info_id)
+                                            .Join(db.GetTable<TAfisha_dates>(),
+                                            tp => tp.Key,
+                                            ap => ap.Id,
+                                            (tp, ap) => new { Id = ap.Id_performance, ap.Date, ap.Cancelled, Tickets = tp.Select(x => x) })
+                                            .Join(db.GetTable<TAfisha>(),
+                                            tp => tp.Id,
+                                            ap => ap.Id,
+                                            (tp, ap) => new { ap.Name, ap.Small_image, tp.Date, tp.Cancelled, tp.Tickets })
+                                            .OrderByDescending(x => x.Date)
+                                            .Select(x => new TicketSellInfo() { Name = x.Name, Small_image = x.Small_image, Date = x.Date, Cancelled = x.Cancelled, Tickets  = x.Tickets });
+            return q;
         }
 
-        public static List<PurchasedTicket> Show_tickets()
+        /*public static List<PurchasedTicket> Show_tickets()
         {
             List<PurchasedTicket> purchasedTickets = new List<PurchasedTicket>();
-            IQueryable<TicketSellInfo> ticket_Sell_Info = Find_tickets();
+            IQueryable<TicketSellInfo> ticket_Sell_Info = FindTickets1();
             string st = "Места: " + Environment.NewLine;
             string path = "";
             foreach (var q in ticket_Sell_Info)
@@ -143,6 +161,6 @@ namespace Theater
                 purchasedTickets.Add(purchasedTicket);
             }
             return purchasedTickets;
-        }
+        }*/
     }
 }

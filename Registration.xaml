@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Theater"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="Registration" Height="300" Width="270" FontFamily="Century Gothic" WindowStartupLocation="CenterScreen" Closing="MetroWindow_Closing">
+        Title="Registration" Height="350" Width="300" FontFamily="Century Gothic" WindowStartupLocation="CenterScreen" Closing="MetroWindow_Closing">
     <Window.Resources>
         <Style TargetType="Button" x:Key="FlatButtonStyle">
             <Setter Property="Background" Value="MediumTurquoise" />
@@ -60,17 +60,18 @@
                 <ColumnDefinition Width="25*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="12*"/>
-                <RowDefinition Height="19*"/>
-                <RowDefinition Height="87*"/>
-                <RowDefinition Height="12*"/>
+                <RowDefinition Height="25*"/>
+                <RowDefinition Height="295*"/>
+                <RowDefinition Height="25*"/>
             </Grid.RowDefinitions>
-            <Label Grid.Row="1" Content="Регистрация" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Grid.Column="1" />
-            <StackPanel Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" >
+            <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Center">
+                <Label Content="Регистрация" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
                 <Label Content="Логин" FontSize="14"/>
                 <TextBox x:Name="LoginBox" FontSize="14"/>
                 <Label Content="Пароль" FontSize="14"/>
-                <TextBox x:Name="PasswordBox" Margin="0,0,0,20" FontSize="14"/>
+                <PasswordBox x:Name="PasswordBox" FontSize="14"/>
+                <Label Content="Подтвердите пароль" FontSize="14"/>
+                <PasswordBox x:Name="ConfirmPasswordBox" Margin="0,0,0,20" FontSize="14"/>
                 <Button x:Name="RegistrateBtn" Content="Зарегистрироаваться" Click="RegistrateBtn_Click"/>
             </StackPanel>
         </Grid>

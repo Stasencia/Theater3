@@ -96,6 +96,10 @@ namespace Theater
         private void Scene_SeatClicked(object sender, SeatClickedEventArgs e)
         {
             initialprice += e.Price;
+            if (initialprice == 0)
+                PurchaseBtn.IsEnabled = false;
+            else
+                PurchaseBtn.IsEnabled = true;
             InitialPrice.Content = $"Цена: {initialprice} грн.";
             OverallPrice.Content = $"Всего: {initialprice * (100 - discount) / 100:f2} грн.";
         }
@@ -115,7 +119,7 @@ namespace Theater
                 dialogContent.Text = "Билеты были успешно заказаны!" + Environment.NewLine + "Благодарим за покупку.";
                 initialprice = 0;
                 CalculatePrices();
-                //PurchaseBtn.IsEnabled = false;
+                PurchaseBtn.IsEnabled = false;
             }
             else
                 dialogContent.Text = "При сохранении данных произошла ошибка." + Environment.NewLine + "Попробуйте пожалуйста позже.";

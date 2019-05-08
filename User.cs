@@ -13,13 +13,13 @@ namespace Theater
     class User
     {
         public static User CurrentUser = new User();
-        public int ID { get; private set; } = 1;
+        public int ID { get; private set; } = 0;
         public int Right { get; private set; } = 0;
         private User()
         {
             
         }
-        public static async void Registration(Window sender, string login, string password)
+        public static async void Registration(Window sender, string login, string password, string confirmpassword)
         {
             TextBlock dialogContent = new TextBlock();
             if (!string.IsNullOrWhiteSpace(login) && !string.IsNullOrEmpty(login) &&
@@ -30,19 +30,27 @@ namespace Theater
                     .Any(k => k.Login == login);
                 if (!query)
                 {
-                    TUsers user = new TUsers() { Login = login, Password = password };
-                    db.GetTable<TUsers>().InsertOnSubmit(user);
-                    try
+                    if (password == confirmpassword)
                     {
-                        db.SubmitChanges();
-                        dialogContent.Text = "Вы были успешно зарегистрированы!";
-                        await sender.ShowDialog(dialogContent);
-                        CurrentUser.ID = user.Id;
-                        sender.Close();
+                        TUsers user = new TUsers() { Login = login, Password = password };
+                        db.GetTable<TUsers>().InsertOnSubmit(user);
+                        try
+                        {
+                            db.SubmitChanges();
+                            dialogContent.Text = "Вы были успешно зарегистрированы!";
+                            await sender.ShowDialog(dialogContent);
+                            CurrentUser.ID = user.Id;
+                            sender.Close();
+                        }
+                        catch (Exception e)
+                        {
+                            dialogContent.Text = e.Message;
+                            ShowDial(sender, dialogContent);
+                        }
                     }
-                    catch (Exception e)
+                    else
                     {
-                        dialogContent.Text = e.Message;
+                        dialogContent.Text = "Значение поля \"подтверждение пароля\" не сходится со значением нового пароля";
                         ShowDial(sender, dialogContent);
                     }
                 }

@@ -61,7 +61,7 @@
                 <Label x:Name="InitialPrice" VerticalAlignment="Center" FontSize="15">Цена: 0.00 грн.</Label>
                 <Label x:Name="Discount" VerticalAlignment="Center" FontSize="15">Скидка: 0%</Label>
                 <Label x:Name="OverallPrice" VerticalAlignment="Center" FontSize="17" FontWeight="Black">Всего: 0.00 грн.</Label>
-                <Button x:Name="PurchaseBtn" HorizontalAlignment="Center" FontSize="16" Click="PurchaseBtn_Click">Купить билеты</Button>
+                <Button IsEnabled="False" x:Name="PurchaseBtn" HorizontalAlignment="Center" FontSize="16" Click="PurchaseBtn_Click">Купить билеты</Button>
             </StackPanel>
             <Border Panel.ZIndex="1" Background="White" Grid.Column="1" Grid.RowSpan="3"></Border>
             <Grid Grid.Column="1" x:Name="InfoGrid"  Panel.ZIndex="1" Grid.RowSpan="3" VerticalAlignment="Center">
