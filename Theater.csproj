@@ -91,6 +91,7 @@
     </Compile>
     <Compile Include="Beljetazh.cs" />
     <Compile Include="Benuar.cs" />
+    <Compile Include="ButtonAdapter.cs" />
     <Compile Include="ChangeLoginHandler.cs" />
     <Compile Include="ChangePasswordHandler.cs" />
     <Compile Include="ChangePersonalInfoControl.xaml.cs">

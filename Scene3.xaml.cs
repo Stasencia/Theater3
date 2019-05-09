@@ -23,12 +23,13 @@ namespace Theater
     public partial class Scene3 : UserControl
     {
         int perf_info_id;
-        public List<Button> seats = new List<Button>();
+        public List<TTickets> seats = new List<TTickets>();
         DataContext db = new DataContext(DB_connection.connectionString);
         public Scene3(int perf_info_id)
         {
             InitializeComponent();
             this.perf_info_id = perf_info_id;
+            this.DataContext = perf_info_id;
         }
         private void MyRootDragDelta(object sender, DragDeltaEventArgs e)
         {
@@ -36,7 +37,7 @@ namespace Theater
             translateTransform.Y += e.VerticalChange;
         }
 
-        public List<Button> GetSeats()
+        public List<TTickets> GetSeats()
         {
             return seats;
         }
@@ -44,18 +45,19 @@ namespace Theater
         private void SeatBtn_Click(object sender, RoutedEventArgs e)
         {
             Button b = sender as Button;
-            TTickets t = Ticket.GetTicketInfo(b, perf_info_id);
+            //TTickets t = Ticket.GetTicketInfo(b, perf_info_id);
+            ButtonAdapter ba = new ButtonAdapter(b);
             if (b.Background == Brushes.Tomato)
             {
                 b.Background = Brushes.DarkRed;
-                OnSeatClicked(new SeatClickedEventArgs(t.Price));
-                seats.Add(b);
+                OnSeatClicked(new SeatClickedEventArgs(ba.Price));
+                seats.Add(ba);
             }
             else
             {
                 b.Background = Brushes.Tomato;
-                OnSeatClicked(new SeatClickedEventArgs(-t.Price));
-                seats.Remove(b);
+                OnSeatClicked(new SeatClickedEventArgs(-ba.Price));
+                seats.Remove(ba);
             }
         }
 

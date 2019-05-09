@@ -106,21 +106,18 @@ namespace Theater
 
         private async void PurchaseBtn_Click(object sender, RoutedEventArgs e)
         {
-            List<Button> seats = scene.GetSeats();
-            List<TTickets> tickets = new List<TTickets>();
+            List<TTickets> tickets = scene.GetSeats();
             TextBox dialogContent = new TextBox();
-            foreach (Button seat in seats)
+            foreach (TTickets t in tickets)
             {
-                seat.IsEnabled = false;
-                seat.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFFBC6BC"));
-                tickets.Add(Ticket.GetTicketInfo(seat, perf_info_id));
+                t.GetButton().IsEnabled = false;
+                t.GetButton().Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFFBC6BC"));
             }
             if (Ticket.Ticket_purchase(tickets) == 0)
             {
                 dialogContent.Text = "Билеты были успешно заказаны!" + Environment.NewLine + "Благодарим за покупку.";
                 initialprice = 0;
                 CalculatePrices();
-                seats.Clear();
                 tickets.Clear();
                 PurchaseBtn.IsEnabled = false;
             }

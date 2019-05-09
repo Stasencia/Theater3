@@ -63,7 +63,8 @@ namespace Theater
             DataContext db = new DataContext(DB_connection.connectionString);
             foreach (TTickets ticket in tickets)
             {
-                db.GetTable<TTickets>().InsertOnSubmit(ticket);
+                TTickets t = new TTickets() { User_Id = ticket.User_Id, Performance_info_id = ticket.Performance_info_id, Price = ticket.Price, HallPart = ticket.HallPart, Left = ticket.Left, Sector = ticket.Sector, Seat = ticket.Seat };
+                db.GetTable<TTickets>().InsertOnSubmit(t);
             }
             try
             {

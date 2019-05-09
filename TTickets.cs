@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data.Linq.Mapping;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace Theater
 {
@@ -27,5 +28,9 @@ namespace Theater
         [Column]
         public int Seat { get; set; }
 
+        public virtual Button GetButton()
+        {
+            return null;
+        }
     }
 }
