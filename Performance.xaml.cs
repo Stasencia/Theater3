@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialDesignThemes.Wpf;
+using System;
 using System.Collections.Generic;
 using System.Data.Linq;
 using System.Linq;
@@ -177,14 +178,33 @@ namespace Theater
         }
         private void Day_pushed(object sender, EventArgs e)
         {
-            DateTime date = Convert.ToDateTime(((Button)sender).Tag);
-            var query = db.GetTable<TAfisha_dates>()
-                       .Where(l => l.Id_performance == perf_id && l.Date == date)
-                       .Select(l => new { l.Date, l.Id }).First();
-            //Ticket_purchase t = new Ticket_purchase(this, query.Id);
-            Ticket_purchase1 t = new Ticket_purchase1(this, query.Id);
-            t.Show();
-            this.Hide();
+            if (User.CurrentUser.ID != 0)
+            {
+                DateTime date = Convert.ToDateTime(((Button)sender).Tag);
+                var query = db.GetTable<TAfisha_dates>()
+                           .Where(l => l.Id_performance == perf_id && l.Date == date)
+                           .Select(l => new { l.Date, l.Id }).First();
+                //Ticket_purchase t = new Ticket_purchase(this, query.Id);
+                Ticket_purchase1 t = new Ticket_purchase1(this, query.Id);
+                t.Show();
+                this.Hide();
+            }
+            else
+            {
+                TextBlock dialogContent = new TextBlock();
+                dialogContent.Text = "Только авторизированные пользователи имеют доступ к покупке билетов. Пожалуйста, выполните вход в систему.";
+                ShowDial(this, dialogContent);
+            }
+        }
+
+        private void DialogClose(object sender, RoutedEventArgs e)
+        {
+            MaterialDesignThemes.Wpf.DialogHost.CloseDialogCommand.Execute(null, null);
+        }
+
+        private static async void ShowDial(Window sender, TextBlock dialogContent)
+        {
+            await sender.ShowDialog(dialogContent);
         }
     }
 }

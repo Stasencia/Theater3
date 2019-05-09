@@ -23,7 +23,7 @@ namespace Theater
     public partial class Scene3 : UserControl
     {
         int perf_info_id;
-        List<Button> seats = new List<Button>();
+        public List<Button> seats = new List<Button>();
         DataContext db = new DataContext(DB_connection.connectionString);
         public Scene3(int perf_info_id)
         {

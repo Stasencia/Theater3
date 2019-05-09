@@ -47,12 +47,12 @@ namespace Theater
         {
             ContentGrid.Children.Clear();
             purchasedTickets.TicketPanel.Children.Clear();
-            /*List<PurchasedTicket> showTickets = Ticket.Show_tickets();
+            List<PurchasedTicket> showTickets = Ticket.ShowTickets();
             foreach(PurchasedTicket ticket in showTickets)
             {
                 purchasedTickets.TicketPanel.Children.Add(ticket);
             }
-            ContentGrid.Children.Add(purchasedTickets);*/
+            ContentGrid.Children.Add(purchasedTickets);
         }
 
         private void DialogClose(object sender, RoutedEventArgs e)

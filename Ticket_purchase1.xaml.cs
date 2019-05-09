@@ -112,6 +112,7 @@ namespace Theater
             foreach (Button seat in seats)
             {
                 seat.IsEnabled = false;
+                seat.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFFBC6BC"));
                 tickets.Add(Ticket.GetTicketInfo(seat, perf_info_id));
             }
             if (Ticket.Ticket_purchase(tickets) == 0)
@@ -119,6 +120,8 @@ namespace Theater
                 dialogContent.Text = "Билеты были успешно заказаны!" + Environment.NewLine + "Благодарим за покупку.";
                 initialprice = 0;
                 CalculatePrices();
+                seats.Clear();
+                tickets.Clear();
                 PurchaseBtn.IsEnabled = false;
             }
             else

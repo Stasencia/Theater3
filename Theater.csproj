@@ -89,6 +89,8 @@
     <Compile Include="Authorization.xaml.cs">
       <DependentUpon>Authorization.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Beljetazh.cs" />
+    <Compile Include="Benuar.cs" />
     <Compile Include="ChangeLoginHandler.cs" />
     <Compile Include="ChangePasswordHandler.cs" />
     <Compile Include="ChangePersonalInfoControl.xaml.cs">
@@ -96,6 +98,7 @@
     </Compile>
     <Compile Include="DayButtonProperties.cs" />
     <Compile Include="DB_connection.cs" />
+    <Compile Include="HallPart.cs" />
     <Compile Include="LoginChangeHandler.cs" />
     <Compile Include="LoginChangeReciever.cs" />
     <Compile Include="LoginExistsHandler.cs" />
@@ -103,6 +106,7 @@
     <Compile Include="My_Account.xaml.cs">
       <DependentUpon>My_Account.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Parter.cs" />
     <Compile Include="PasswordChangeHandler.cs" />
     <Compile Include="PasswordChangeReciever.cs" />
     <Compile Include="PasswordConfirmationHandler.cs" />
