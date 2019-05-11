@@ -94,7 +94,7 @@ namespace Theater
         {
             List<Button> buttons = Scene.MainGrid.Children.OfType<Button>().ToList();
             TextBox dialogContent = new TextBox();
-            if (Ticket.Ticket_purchase(buttons, perf_info_id, price, this) == 0)
+            if (Ticket.Ticket_purchase1(buttons, perf_info_id, price, this) == 0)
             {
                 dialogContent.Text = "Билеты были успешно заказаны!" + Environment.NewLine + "Благодарим за покупку.";
                 PriceLabel.Content = "Цена: 0 грн.";

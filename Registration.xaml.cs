@@ -36,8 +36,9 @@ namespace Theater
         private void RegistrateBtn_Click(object sender, RoutedEventArgs e)
         {
             string Login = LoginBox.Text;
-            string Password = PasswordBox.Text;
-            User.Registration(this, Login, Password);
+            string Password = PasswordBox.Password;
+            string ConfirmPassword = ConfirmPasswordBox.Password;
+            User.Registration(this, Login, Password, ConfirmPassword);
         }
 
         private void MetroWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)

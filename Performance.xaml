@@ -24,23 +24,6 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        <!--Style x:Key="DateStyle" TargetType="Button" BasedOn="{StaticResource MaterialDesignRaisedLightButton}">
-            <Setter Property="materialDesign:RippleAssist.Feedback" Value="{x:Null}"></Setter>
-            <Setter Property="Background" Value="White"></Setter>
-            <Setter Property="Foreground" Value="Black"></Setter>
-            <Setter Property="BorderBrush" Value="WhiteSmoke"></Setter>
-            <Setter Property="ContentTemplate">
-                <Setter.Value>
-                    <DataTemplate>
-                        <Grid>
-                            <TextBlock x:Name="Description" Text="{Binding}" TextAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Panel.ZIndex="1"></TextBlock>
-                            <Image Source="bin/Debug/images_afisha/reverse-small.jpg" Grid.RowSpan="2" Grid.ColumnSpan="2"></Image>
-                            <TextBlock x:Name="MyDate" Panel.ZIndex="1" Text="1ss21" VerticalAlignment="Bottom"></TextBlock>
-                        </Grid>
-                    </DataTemplate>
-                </Setter.Value>
-            </Setter>
-        </-->
         <Style x:Key="DateStyle" TargetType="Button" BasedOn="{StaticResource MaterialDesignRaisedLightButton}">
             <Setter Property="materialDesign:RippleAssist.Feedback" Value="{x:Null}"></Setter>
             <Setter Property="Background" Value="White"></Setter>
@@ -63,43 +46,60 @@
             </Setter>
         </Style>
     </Window.Resources>
-    <ScrollViewer>
-        <StackPanel>
-            <Image x:Name="Banner" Source="bin/Debug/images_afisha/reverse-full.jpg" Stretch="UniformToFill"></Image>
-            <Label x:Name="PerfAltName" FontSize="18" FontWeight="Bold">По книгам Льюиса Кэрролла «Алиса в Стране чудес» и «Алиса в Зазеркалье»</Label>
-            <Label>
-                <TextBlock x:Name="Smallinfo">музыка: Владимир Баскин<LineBreak/>либретто: Николай Голь, Софья Журавлева<LineBreak/>режиссер-постановщик: Марина Швыдкая</TextBlock>
-            </Label>
-            <Label x:Name="Duration" FontWeight="Bold" FontStyle="Italic">Продолжительность: 2 часа</Label>
-            <Label x:Name="AgeRestr" FontWeight="Bold" FontStyle="Italic">Возрастное ограничение: 6+</Label>
-            <Label>
-                <TextBlock x:Name="Decsription" TextWrapping="Wrap">
+    
+    <materialDesign:DialogHost>
+        <materialDesign:DialogHost.DialogContentTemplate>
+            <DataTemplate DataType="local: TextBlock">
+                <Grid Width="{Binding ActualWidth, ElementName=MainGrid}">
+                    <Grid Margin="20">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <TextBlock TextWrapping="Wrap" Text="{Binding Text}" Grid.Row="0" Margin="0,0,0,10"/>
+                        <Button Grid.Row="1" Click="DialogClose">Закрыть</Button>
+                    </Grid>
+                </Grid>
+            </DataTemplate>
+        </materialDesign:DialogHost.DialogContentTemplate>
+        <ScrollViewer>
+            <StackPanel>
+                <Image x:Name="Banner" Source="bin/Debug/images_afisha/reverse-full.jpg" Stretch="UniformToFill"></Image>
+                <Label x:Name="PerfAltName" FontSize="18" FontWeight="Bold">По книгам Льюиса Кэрролла «Алиса в Стране чудес» и «Алиса в Зазеркалье»</Label>
+                <Label>
+                    <TextBlock x:Name="Smallinfo">музыка: Владимир Баскин<LineBreak/>либретто: Николай Голь, Софья Журавлева<LineBreak/>режиссер-постановщик: Марина Швыдкая</TextBlock>
+                </Label>
+                <Label x:Name="Duration" FontWeight="Bold" FontStyle="Italic">Продолжительность: 2 часа</Label>
+                <Label x:Name="AgeRestr" FontWeight="Bold" FontStyle="Italic">Возрастное ограничение: 6+</Label>
+                <Label>
+                    <TextBlock x:Name="Decsription" TextWrapping="Wrap">
                     Эта постановка — настоящее буйство фантазии, где драматургическая основа сюжета получила пластическое воплощение, а великолепную музыку дополняют зрелищные декорации. В спектакле много чудес и превращений — ведь это же сказка. Постановка изобилует причудливой игрой света, видеоэффектами и иллюзиями и передает настроение оригинального произведения Кэрролла и его своеобразную логику. Или её отсутствие — кому как нравится.
-                </TextBlock>
-            </Label>
-            <StackPanel x:Name="month_panel" Margin="20"></StackPanel>
-            <Grid x:Name="Dates_panel" Margin="0, 0, 0, 20" HorizontalAlignment="Center">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition x:Name="col" Width="*"/>
-                    <ColumnDefinition  Width="*"/>
-                    <ColumnDefinition  Width="*"/>
-                    <ColumnDefinition  Width="*"/>
-                    <ColumnDefinition  Width="*"/>
-                    <ColumnDefinition  Width="*"/>
-                    <ColumnDefinition  Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="{Binding ElementName=col, Path=Width}"/>
-                    <RowDefinition Height="{Binding ElementName=col, Path=Width}"/>
-                    <RowDefinition Height="{Binding ElementName=col, Path=Width}"/>
-                    <RowDefinition Height="{Binding ElementName=col, Path=Width}"/>
-                    <RowDefinition Height="{Binding ElementName=col, Path=Width}"/>
-                    <RowDefinition Height="{Binding ElementName=col, Path=Width}"/>
-                </Grid.RowDefinitions>
-            </Grid>
-            <UniformGrid x:Name="Dates_panel1" Columns="7" Rows="6" Margin="20,0,20,20">
-                
-            </UniformGrid>
-        </StackPanel>
-    </ScrollViewer>
+                    </TextBlock>
+                </Label>
+                <StackPanel x:Name="month_panel" Margin="20"></StackPanel>
+                <Grid x:Name="Dates_panel" Margin="0, 0, 0, 20" HorizontalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition x:Name="col" Width="*"/>
+                        <ColumnDefinition  Width="*"/>
+                        <ColumnDefinition  Width="*"/>
+                        <ColumnDefinition  Width="*"/>
+                        <ColumnDefinition  Width="*"/>
+                        <ColumnDefinition  Width="*"/>
+                        <ColumnDefinition  Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="{Binding ElementName=col, Path=Width}"/>
+                        <RowDefinition Height="{Binding ElementName=col, Path=Width}"/>
+                        <RowDefinition Height="{Binding ElementName=col, Path=Width}"/>
+                        <RowDefinition Height="{Binding ElementName=col, Path=Width}"/>
+                        <RowDefinition Height="{Binding ElementName=col, Path=Width}"/>
+                        <RowDefinition Height="{Binding ElementName=col, Path=Width}"/>
+                    </Grid.RowDefinitions>
+                </Grid>
+                <UniformGrid x:Name="Dates_panel1" Columns="7" Rows="6" Margin="20,0,20,20">
+
+                </UniformGrid>
+            </StackPanel>
+        </ScrollViewer>
+    </materialDesign:DialogHost>
 </Window>

@@ -83,4 +83,6 @@ C:\Users\Stasia\Desktop\Theater\Theater\obj\Debug\Scene2.g.cs
 C:\Users\Stasia\Desktop\Theater\Theater\obj\Debug\Scene2.baml
 C:\Users\Stasia\Desktop\Theater\Theater\obj\Debug\Scene3.g.cs
 C:\Users\Stasia\Desktop\Theater\Theater\obj\Debug\Scene3.baml
+C:\Users\Stasia\Desktop\Theater\Theater\obj\Debug\ChangePersonalInfoControl.g.cs
+C:\Users\Stasia\Desktop\Theater\Theater\obj\Debug\ChangePersonalInfoControl.baml
 C:\Users\Stasia\Desktop\Theater\Theater\obj\Debug\Theater.csprojAssemblyReference.cache

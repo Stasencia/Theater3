@@ -89,11 +89,30 @@
     <Compile Include="Authorization.xaml.cs">
       <DependentUpon>Authorization.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Beljetazh.cs" />
+    <Compile Include="Benuar.cs" />
+    <Compile Include="ButtonAdapter.cs" />
+    <Compile Include="ChangeLoginHandler.cs" />
+    <Compile Include="ChangePasswordHandler.cs" />
+    <Compile Include="ChangePersonalInfoControl.xaml.cs">
+      <DependentUpon>ChangePersonalInfoControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DayButtonProperties.cs" />
     <Compile Include="DB_connection.cs" />
+    <Compile Include="HallPart.cs" />
+    <Compile Include="LoginChangeHandler.cs" />
+    <Compile Include="LoginChangeReciever.cs" />
+    <Compile Include="LoginExistsHandler.cs" />
+    <Compile Include="NoChangesHandler.cs" />
     <Compile Include="My_Account.xaml.cs">
       <DependentUpon>My_Account.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Parter.cs" />
+    <Compile Include="PasswordChangeHandler.cs" />
+    <Compile Include="PasswordChangeReciever.cs" />
+    <Compile Include="PasswordConfirmationHandler.cs" />
+    <Compile Include="PasswordStringsFilledHandler.cs" />
+    <Compile Include="PasswordValidationHandler.cs" />
     <Compile Include="Performance.xaml.cs">
       <DependentUpon>Performance.xaml</DependentUpon>
     </Compile>
@@ -119,6 +138,8 @@
       <DependentUpon>Scene3.xaml</DependentUpon>
     </Compile>
     <Compile Include="SeatClickedEventArgs.cs" />
+    <Compile Include="SeatInfo.cs" />
+    <Compile Include="LoginStringsFilledHandler.cs" />
     <Compile Include="TAfisha.cs" />
     <Compile Include="TAfisha_dates.cs" />
     <Compile Include="TAfisha_SeatsPrices.cs" />
@@ -138,6 +159,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Authorization.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ChangePersonalInfoControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -174,13 +174,15 @@
                 <Label Grid.Row="1">
                     <TextBlock x:Name="PerformanceDate" TextWrapping="Wrap">20.05.2019</TextBlock>
                 </Label>
-                <Label Grid.Row="2">
-                    <TextBlock TextWrapping="Wrap" x:Name="Seats">Места:<LineBreak/>
+                <ScrollViewer Grid.Row="2">
+                    <Label>
+                        <TextBlock TextWrapping="Wrap" x:Name="Seats">Места:<LineBreak/>
                     Партер: 1 ряд (2, 3 место)
                     <LineBreak/>
                     Бельэтаж: 3 ряд (5, 6, 7 место)
-                    </TextBlock>
-                </Label>
+                        </TextBlock>
+                    </Label>
+                </ScrollViewer>
             </Grid>
         </DockPanel>
     </Grid>

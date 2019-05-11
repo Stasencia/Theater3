@@ -8,28 +8,35 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
-        <Style x:Key="Seat" TargetType="Button" BasedOn="{StaticResource MaterialDesignFloatingActionMiniLightButton}">
-        <!--Style x:Key="Seat" TargetType="Button" BasedOn="{StaticResource MaterialDesignRaisedLightButton}"-->
+        <!-- Style x:Key="Seat" TargetType="Button" BasedOn="{StaticResource MaterialDesignFloatingActionMiniLightButton}"-->
+        <Style x:Key="Seat" TargetType="Button" BasedOn="{StaticResource MaterialDesignRaisedLightButton}">
             <Setter Property="materialDesign:RippleAssist.Feedback" Value="#DD000000"></Setter>
             <Setter Property="Background" Value="Tomato"></Setter>
             <Setter Property="Foreground" Value="White"></Setter>
-            <Setter Property="BorderBrush" Value="{Binding RelativeSource={RelativeSource Self}, Path=Background}"></Setter>
             <Setter Property="Height" Value="20"></Setter>
             <Setter Property="Width" Value="20"></Setter>
+            <Setter Property="materialDesign:ShadowAssist.Darken" Value="True"></Setter>
+            <Setter Property="materialDesign:ShadowAssist.ShadowDepth" Value="Depth2"></Setter>
             <Setter Property="FontFamily" Value="Sugeoe UI"></Setter>
+            <Setter Property="Tag" Value="{Binding}"></Setter>
             <EventSetter Event="Click" Handler="SeatBtn_Click"></EventSetter>
-            <!--Setter Property="Template">
+            <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
                         <Grid>
-                            <Ellipse Fill="Tomato">
+                            <Ellipse Fill="{TemplateBinding Background}" x:Name="MyEllipse">
                             </Ellipse>
                             <ContentPresenter HorizontalAlignment="Center"
                                   VerticalAlignment="Center"/>
                         </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" Value="#FFFBC6BC" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
-            </-->
+            </Setter>
         </Style>
     </UserControl.Resources>
     <Grid>
