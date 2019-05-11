@@ -131,14 +131,7 @@
     <Compile Include="Scene.xaml.cs">
       <DependentUpon>Scene.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Scene2.xaml.cs">
-      <DependentUpon>Scene2.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Scene3.xaml.cs">
-      <DependentUpon>Scene3.xaml</DependentUpon>
-    </Compile>
     <Compile Include="SeatClickedEventArgs.cs" />
-    <Compile Include="SeatInfo.cs" />
     <Compile Include="LoginStringsFilledHandler.cs" />
     <Compile Include="TAfisha.cs" />
     <Compile Include="TAfisha_dates.cs" />
@@ -147,9 +140,6 @@
     <Compile Include="TicketSellInfo.cs" />
     <Compile Include="Ticket_purchase.xaml.cs">
       <DependentUpon>Ticket_purchase.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Ticket_purchase1.xaml.cs">
-      <DependentUpon>Ticket_purchase1.xaml</DependentUpon>
     </Compile>
     <Compile Include="TTickets.cs" />
     <Compile Include="TUsers.cs" />
@@ -214,19 +204,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Scene2.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Scene3.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Ticket_purchase.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Ticket_purchase1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -115,8 +115,6 @@
                     <Button x:Name="RegistrationBtn" Style="{StaticResource ImageButtonStyle}" Content="Регистрация" VerticalAlignment="Center" Click="RegistrationBtn_Click"/>
                 </StackPanel>
             </Viewbox>
-
         </DockPanel>
-
     </Grid>
 </Window>

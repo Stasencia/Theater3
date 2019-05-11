@@ -157,11 +157,11 @@
         </materialDesign:DialogHost.DialogContentTemplate>
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="241*" MaxWidth="241"/>
+                <ColumnDefinition Width="241*" MaxWidth="241" MinWidth="241"/>
                 <ColumnDefinition Width="551*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="31*" MaxHeight="70"/>
+                <RowDefinition Height="31*" MaxHeight="70" MinHeight="70"/>
                 <RowDefinition Height="179*"/>
             </Grid.RowDefinitions>
             <Border Grid.Column="1" Background="#FF00BCD4"></Border>

@@ -34,9 +34,9 @@
         <Border Grid.Row="0"  Background="Tomato" />
         <Label Foreground="White" FontFamily="Century" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center">Афиша</Label>
         <Border Grid.Row="1" BorderBrush="Gray" BorderThickness="0 1 0 1">
-        <StackPanel x:Name="month_panel" Orientation="Horizontal" HorizontalAlignment="Center">
-                <!--Button Style="{StaticResource MonthStyle}" Content="Декабрь&#xa;2019"></-->
-        </StackPanel></Border>
+            <StackPanel x:Name="month_panel" Orientation="Horizontal" HorizontalAlignment="Center">
+            </StackPanel>
+        </Border>
         <ScrollViewer Grid.Row="2">
             <StackPanel x:Name="performancelist_panel">
                 <Grid Height="{Binding ActualHeight, ElementName=performancelist_panel}">

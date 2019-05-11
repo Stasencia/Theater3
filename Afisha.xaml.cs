@@ -102,7 +102,6 @@ namespace Theater
         {
             Performance f = new Performance(Convert.ToInt32(((Control)sender).Tag), Month_id);
             f.Show();
-            //this.Parent.Parent.Hide();
         }
     }
 }

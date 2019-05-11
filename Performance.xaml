@@ -76,27 +76,9 @@
                     Эта постановка — настоящее буйство фантазии, где драматургическая основа сюжета получила пластическое воплощение, а великолепную музыку дополняют зрелищные декорации. В спектакле много чудес и превращений — ведь это же сказка. Постановка изобилует причудливой игрой света, видеоэффектами и иллюзиями и передает настроение оригинального произведения Кэрролла и его своеобразную логику. Или её отсутствие — кому как нравится.
                     </TextBlock>
                 </Label>
-                <StackPanel x:Name="month_panel" Margin="20"></StackPanel>
-                <Grid x:Name="Dates_panel" Margin="0, 0, 0, 20" HorizontalAlignment="Center">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition x:Name="col" Width="*"/>
-                        <ColumnDefinition  Width="*"/>
-                        <ColumnDefinition  Width="*"/>
-                        <ColumnDefinition  Width="*"/>
-                        <ColumnDefinition  Width="*"/>
-                        <ColumnDefinition  Width="*"/>
-                        <ColumnDefinition  Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="{Binding ElementName=col, Path=Width}"/>
-                        <RowDefinition Height="{Binding ElementName=col, Path=Width}"/>
-                        <RowDefinition Height="{Binding ElementName=col, Path=Width}"/>
-                        <RowDefinition Height="{Binding ElementName=col, Path=Width}"/>
-                        <RowDefinition Height="{Binding ElementName=col, Path=Width}"/>
-                        <RowDefinition Height="{Binding ElementName=col, Path=Width}"/>
-                    </Grid.RowDefinitions>
-                </Grid>
-                <UniformGrid x:Name="Dates_panel1" Columns="7" Rows="6" Margin="20,0,20,20">
+                <StackPanel x:Name="month_panel" Margin="20" Orientation="Horizontal" HorizontalAlignment="Center">
+                </StackPanel>
+                <UniformGrid x:Name="Dates_panel1" Columns="7" Rows="6" Margin="20,0,20,20" MaxWidth="750">
 
                 </UniformGrid>
             </StackPanel>

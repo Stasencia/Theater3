@@ -31,8 +31,6 @@ namespace Theater
         [Column]
         public string Small_image { get; set; }
         [Column]
-        public decimal Price { get; set; }
-        [Column]
         public bool Is_relevant { get; set; }
     }
 }

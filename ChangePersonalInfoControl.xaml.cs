@@ -23,8 +23,6 @@ namespace Theater
     {
         string New_Login;
         string Initial_Login;
-        string New_Password;
-        string Initial_Password;
         public My_Account account { get; set; }
         TUsers user;
         DataContext db = new DataContext(DB_connection.connectionString);

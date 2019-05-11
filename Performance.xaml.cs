@@ -24,8 +24,7 @@ namespace Theater
     public partial class Performance : Window
     {
         public int Month_id { get; set; }
-        int perf_id, perf_info_id;
-        Afisha a;
+        int perf_id;
         DataContext db = new DataContext(DB_connection.connectionString);
         public Performance(int perf_id, int Month_id)
         {
@@ -109,11 +108,11 @@ namespace Theater
                               (tp, ap) => new { tp.Small_image, ap.Date, ap.Cancelled })
                               .Where(k => k.Date >= d1 && k.Date >= DateTime.Now && !k.Cancelled);
             
-            //var im1 = new TransformedBitmap(im, new ScaleTransform(month_panel.ActualWidth / 7 / im.PixelWidth, month_panel.ActualWidth / 7 / im.PixelHeight));
             for (int i = 0; i < 42; i++)
             {
                 b = Dates_panel1.Children.OfType<Button>().Where(x => x.Name == ("b" + i)).First();
                 b.SetValue(DayButtonProperties.DayProperty, d.Day.ToString());
+                b.SetValue(DayButtonProperties.ImageProperty, null);
                 b.IsEnabled = false;
                 b.Tag = d.Year + "-" + d.Month + "-" + d.Day;
                 d = d.AddDays(1);
@@ -184,7 +183,6 @@ namespace Theater
                 var query = db.GetTable<TAfisha_dates>()
                            .Where(l => l.Id_performance == perf_id && l.Date == date)
                            .Select(l => new { l.Date, l.Id }).First();
-                //Ticket_purchase t = new Ticket_purchase(this, query.Id);
                 Ticket_purchase1 t = new Ticket_purchase1(this, query.Id);
                 t.Show();
                 this.Hide();
