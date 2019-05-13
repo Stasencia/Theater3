@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="Theater.User">
+    <Position X="1.5" Y="1.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAiAAAIAQgAIAIAAAAAAAAAAAAAAAAACAAAAEAAA=</HashCode>
+      <FileName>User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Theater.Authorization">
+    <Position X="4.5" Y="0.75" Width="2.25" />
+    <AssociationLine Name="User" Type="Theater.User" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.5" Y="2.375" />
+        <Point X="4.125" Y="2.375" />
+        <Point X="4.125" Y="3.25" />
+        <Point X="3.25" Y="3.25" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="11.225" Y="0.914" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAQAAAABAAAACABABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Authorization.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="instance" />
+      <Property Name="User" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Theater.Registration">
+    <Position X="7.25" Y="0.75" Width="2.25" />
+    <AssociationLine Name="User" Type="Theater.User" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="7.25" Y="2.812" />
+        <Point X="7.003" Y="2.812" />
+        <Point X="7.003" Y="3.812" />
+        <Point X="3.25" Y="3.812" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="10.872" Y="1.027" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AABBAAAAAAAAAAAABAAAAACABABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Registration.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="instance" />
+      <Property Name="User" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

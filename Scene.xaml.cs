@@ -20,12 +20,12 @@ namespace Theater
     /// <summary>
     /// Логика взаимодействия для Scene3.xaml
     /// </summary>
-    public partial class Scene3 : UserControl
+    public partial class Scene : UserControl
     {
         int perf_info_id;
         public List<TTickets> seats = new List<TTickets>();
         DataContext db = new DataContext(DB_connection.connectionString);
-        public Scene3(int perf_info_id)
+        public Scene(int perf_info_id)
         {
             InitializeComponent();
             this.perf_info_id = perf_info_id;

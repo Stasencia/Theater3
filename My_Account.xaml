@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Theater"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="My_Account" Height="500" Width="800">
+        Title="Мой кабинет" Height="500" Width="800">
     <Window.Resources>
         <DrawingImage x:Key="curtains">
             <DrawingImage.Drawing>

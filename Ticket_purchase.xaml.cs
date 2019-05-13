@@ -20,20 +20,20 @@ namespace Theater
     /// <summary>
     /// Логика взаимодействия для Ticket_purchase1.xaml
     /// </summary>
-    public partial class Ticket_purchase1 : Window
+    public partial class Ticket_purchase : Window
     {
         int perf_info_id;
         Performance perf;
-        Scene3 scene;
+        Scene scene;
         decimal discount;
         DataContext db = new DataContext(DB_connection.connectionString);
         decimal initialprice = 0;
-        public Ticket_purchase1(Performance perf, int info)
+        public Ticket_purchase(Performance perf, int info)
         {
             InitializeComponent();
             perf_info_id = info;
             this.perf = perf;
-            scene = new Scene3(info);
+            scene = new Scene(info);
             scene.Name = "Scene";
             MainGrid.Children.Add(scene);
             Ticket_purchase_Load();

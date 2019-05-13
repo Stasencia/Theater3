@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Theater"
         mc:Ignorable="d"
             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="Authorization" Height="300" Width="270" FontFamily="Century Gothic" Closing="Window_Closing">
+        Title="Авторизация" Height="300" Width="270" FontFamily="Century Gothic" Closing="Window_Closing">
     <Window.Resources>
     </Window.Resources>
     <materialDesign:DialogHost>
@@ -42,7 +42,7 @@
                 <TextBox x:Name="LoginBox" FontSize="14"/>
                 <Label Content="Пароль" FontSize="14"/>
                 <PasswordBox x:Name="PasswordBox" Margin="0,0,0,20" FontSize="14"/>
-                <Button Content="Авторизироваться" Click="Button_ClickAsync"/>
+                <Button Content="Авторизироваться" Click="AuthorizationBtn_Click"/>
             </StackPanel>
         </Grid>
     </materialDesign:DialogHost>

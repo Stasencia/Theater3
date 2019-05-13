@@ -1,4 +1,4 @@
-﻿<Window x:Class="Theater.Ticket_purchase1"
+﻿<Window x:Class="Theater.Ticket_purchase"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Theater"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="Ticket_purchase1" Height="600" Width="800" FontFamily="Century Gothic" Closing="Window_Closing">
+        Title="Покупка билетов" Height="600" Width="800" FontFamily="Century Gothic" Closing="Window_Closing">
     <Window.Resources>
         <Style x:Key="Seat" TargetType="Button" BasedOn="{StaticResource MaterialDesignRaisedLightButton}">
             <Setter Property="Background" Value="White"></Setter>

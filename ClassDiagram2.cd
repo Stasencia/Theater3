@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="Theater.Ticket_purchase">
+    <Position X="1.25" Y="1" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAARQAAAADAEAICAAAAAAAIAAAgAAAIAACA=</HashCode>
+      <FileName>Ticket_purchase.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="scene" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Theater.Scene">
+    <Position X="4.75" Y="1" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAQAAAAAAAEAAIAAAAEAAAACAAAAAAQAgA=</HashCode>
+      <FileName>Scene.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="seats" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Theater.ButtonAdapter">
+    <Position X="8" Y="1" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>ButtonAdapter.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="button" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Theater.TTickets">
+    <Position X="8" Y="3.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>ACACAAAACQAAAAAAAAAAQAAAAAAAAAAACAAIAAIAQAA=</HashCode>
+      <FileName>TTickets.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Windows.Controls.Button" Collapsed="true">
+    <Position X="10.75" Y="1" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Theater.Ticket">
+    <Position X="1" Y="5.25" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAEAAAAAAAAAAAAAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>Ticket.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

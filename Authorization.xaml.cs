@@ -33,7 +33,7 @@ namespace Theater
             this.mainWindow = mainWindow;
         }
 
-        private void Button_ClickAsync(object sender, RoutedEventArgs e)
+        private void AuthorizationBtn_Click(object sender, RoutedEventArgs e)
         {
             string Login = LoginBox.Text;
             string Password = PasswordBox.Password;

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Theater"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="Registration" Height="350" Width="300" FontFamily="Century Gothic" WindowStartupLocation="CenterScreen" Closing="MetroWindow_Closing">
+        Title="Регистрация" Height="350" Width="300" FontFamily="Century Gothic" WindowStartupLocation="CenterScreen" Closing="MetroWindow_Closing">
     <Window.Resources>
         <Style TargetType="Button" x:Key="FlatButtonStyle">
             <Setter Property="Background" Value="MediumTurquoise" />

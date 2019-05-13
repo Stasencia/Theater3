@@ -25,6 +25,7 @@ namespace Theater
     public partial class Afisha
     {
         private int Month_id { get; set; }
+
         public Afisha()
         {
             InitializeComponent();
